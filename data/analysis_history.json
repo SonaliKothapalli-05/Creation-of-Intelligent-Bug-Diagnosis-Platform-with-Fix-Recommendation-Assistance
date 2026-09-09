@@ -1,0 +1,2956 @@
+[
+  {
+    "timestamp": "2026-09-09T19:33:03.573367",
+    "report": "Test bug for Milestone 4",
+    "analysis": {
+      "test": true
+    }
+  },
+  {
+    "timestamp": "2026-09-09T23:41:02.474027",
+    "report": "Login fails because the database connection times out. Users cannot login.",
+    "analysis": {
+      "triage": {
+        "severity": "Low",
+        "priority": "P3",
+        "component": "Authentication",
+        "confidence": 0.7,
+        "reasoning": "Minor issue."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause resembles historical defect 590: Browsing Google books and browser back button.",
+        "confidence": 0.55,
+        "supporting_evidence": [
+          {
+            "bug_id": "590",
+            "title": "Browsing Google books and browser back button",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.3019,
+            "summary": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or..."
+          },
+          {
+            "bug_id": "423",
+            "title": "\"Add Search Engine\" keyword validation inconsistent",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2909,
+            "summary": "\"Add Search Engine\" keyword validation inconsistent product version 0214927 1583what steps will reproduce the problem1 open options manage search engines add2 choose a keyword that matches that for one of the existing..."
+          },
+          {
+            "bug_id": "87",
+            "title": "Incorrect rendering of PNG alpha channel for opacity of less than 100%",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2893,
+            "summary": "pause button area is moused should appear at an opacity of 70 set via css opacity attribute with png alpha transparency properly rendered what happens insteada chrome does not render png alpha channel properly at opac..."
+          }
+        ],
+        "reasoning": "The submitted report is semantically close to historical bug records."
+      },
+      "duplicate_matches": [],
+      "remediation": {
+        "recommendation": "Investigate the Authentication code path highlighted by the root cause hypothesis: The most probable root cause resembles historical defect 590: Browsing Google books and browser back button..",
+        "confidence": 0.41,
+        "action_items": [
+          "Reproduce the defect in the Authentication flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "Login fails because the database connection times out. Users cannot login.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "590-0",
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3019,
+          "text": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problem1 chose any book from booksgooglecom2 scroll a couple of pages down to cause the link in the address bar to change by adding an anchor with the page number3 hit the browser back buttonwhat is the expected resultusing anchors i believe the back button should either jump back to the correct page since the page number actually changes in the address bar or the browser should take the user to the previous webpage in the history as ie 7 and ff"
+        },
+        {
+          "chunk_id": "423-0",
+          "bug_id": "423",
+          "title": "\"Add Search Engine\" keyword validation inconsistent",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2909,
+          "text": "\"Add Search Engine\" keyword validation inconsistent product version 0214927 1583what steps will reproduce the problem1 open options manage search engines add2 choose a keyword that matches that for one of the existing search engines and valid entries for the other two fields3 the validation checkbox for the keyword field is green even though there is a keyword conflict and the search engine cannot be saved the ok button is grayedoutwhat is the expected resultthis may be the expected behaviour but it seems quite unclear from the users perspective the search engine cannot be saved yet there is no indication which field is in errorwhat happens insteadplease provide any additional information below attach a screenshot if possible General Unknown Unknown Unknown"
+        },
+        {
+          "chunk_id": "87-1",
+          "bug_id": "87",
+          "title": "Incorrect rendering of PNG alpha channel for opacity of less than 100%",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2893,
+          "text": "pause button area is moused should appear at an opacity of 70 set via css opacity attribute with png alpha transparency properly rendered what happens insteada chrome does not render png alpha channel properly at opacity of less than 100 instead the alpha channel constituent of the png graphic in this case transparency is rendered with a white bg as can be seen by visiting the url in question also watch the fade in and fade out of the thumbnails background note the ugly white bg that appears until the opacity of the region reaches 100 at which time the png alpha will be fully rendered including its transparencyplease provide any additional information below attach a screenshot if possible try"
+        },
+        {
+          "chunk_id": "15-1",
+          "bug_id": "15",
+          "title": "Chrome(ium?) is not fully Open Source",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2888,
+          "text": "idformerly known as passport which also requiresthe acceptance of an eulawhile the license does conform to the letter of the open source definitionit certainly does not conform to the spirit of point 5 no discriminationagainst persons or groups as acceptance of hundreds of pages ofmicrosoftlegalese without the backing of a lawyer is plain stupidplease provide any additional information below attach a screenshot ifpossiblenot applicable General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "264-1",
+          "bug_id": "264",
+          "title": "Tab does not switch between chat boxes in Gmail",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2813,
+          "text": "tab key must be pressed a number of times to advance to the next chat box prompt when the rightmost chat box prompt is reached pressing tab 3 times selects the address bar and pressing it 4 times causes the bottom of the window to extend upward leaving blank spaceplease provide any additional information below attach a screenshot if possible General Unknown Unknown Unknown Open"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-09T23:58:51.130486",
+    "report": "Title: Browser crash when opening PDF preview in private window\r\nComponent: PDF Viewer\r\nEnvironment: Windows 11, latest browser build\r\n\r\nSteps to reproduce:\r\n1. Open a private browsing window.\r\n2. Navigate to a PDF document.\r\n3. Wait for the preview toolbar to load.\r\n\r\nExpected result:\r\nThe PDF preview should remain open and interactive.\r\n\r\nActual result:\r\nThe tab becomes unresponsive and the browser process closes.\r\n\r\nConsole evidence:\r\nTypeError: this.viewer is null at PdfViewer.render viewer.js:214",
+    "analysis": {
+      "triage": {
+        "severity": "Critical",
+        "priority": "P1",
+        "component": "PDF Viewer",
+        "confidence": 0.95,
+        "reasoning": "Crash detected."
+      },
+      "log_analysis": {
+        "exception_type": "TypeError",
+        "failure_point": "Unknown",
+        "affected_code_path": "PdfViewer.render",
+        "confidence": 0.9,
+        "reasoning": "TypeError detected from submitted stack trace."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause is an unhandled TypeError in the PDF Viewer component.",
+        "confidence": 0.75,
+        "supporting_evidence": [
+          {
+            "bug_id": "19",
+            "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.4449,
+            "summary": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browsers where you have tes..."
+          },
+          {
+            "bug_id": "590",
+            "title": "Browsing Google books and browser back button",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.4393,
+            "summary": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or..."
+          },
+          {
+            "bug_id": "375",
+            "title": "gmail checkbox disappears",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.4225,
+            "summary": "gmail checkbox disappears product version 0214927urls if applicable httpmailgooglecommailshva1inboxother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what..."
+          }
+        ],
+        "reasoning": "The submitted evidence includes a recognizable exception and similar historical defects."
+      },
+      "duplicate_matches": [
+        {
+          "bug_id": "19",
+          "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.4449,
+          "summary": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browser...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        },
+        {
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.4393,
+          "summary": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother brows...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        },
+        {
+          "bug_id": "375",
+          "title": "gmail checkbox disappears",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.4225,
+          "summary": "gmail checkbox disappears product version 0214927urls if applicable httpmailgooglecommailshva1inboxother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        },
+        {
+          "bug_id": "555",
+          "title": "Flash keeps playing after tab close",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.4041,
+          "summary": "Flash keeps playing after tab close product version 0214927 1583urls if applicable httpwwwpopularmechanicscomscienceresearch4280765html as an exampleother browsers testedadd ok or fail after other...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        },
+        {
+          "bug_id": "515",
+          "title": "Text is sometime squashed when page is rendered (text becomes very difficult to read)",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.4032,
+          "summary": "in chrome there seems to be some attempt to squash the text to fit the window and the font is therefore very difficult to read my understanding is the ie uses smoothfont technology to make the text...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        }
+      ],
+      "remediation": {
+        "recommendation": "Fix the PDF Viewer code path by adding validation and error handling around the operation that triggers TypeError.",
+        "confidence": 0.68,
+        "action_items": [
+          "Reproduce the defect in the PDF Viewer flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code.",
+          "Trace the TypeError source and guard the failing object or input before it is used.",
+          "Compare against historical bug 19 before implementing a new fix."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "Title: Browser crash when opening PDF preview in private window\r\nComponent: PDF Viewer\r\nEnvironment: Windows 11, latest browser build\r\n\r\nSteps to reproduce:\r\n1. Open a private browsing window.\r\n2. Navigate to a PDF document.\r\n3. Wait for th",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "19-0",
+          "bug_id": "19",
+          "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.4449,
+          "text": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 configure the browser to use a proxy i use squid 27stable 2 withauthentication enabled2 chrome will prompt for a username and password to auth with the proxy3 browsing continues normally for the sessionwhat is the expected resultintegrated authentication in the browser would use the current users logoncredentials to authenticate with the proxy serverwhat happens insteadchrome will prompt for a username and password to auth with the proxy entering the credentials manually allow the"
+        },
+        {
+          "chunk_id": "590-0",
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.4393,
+          "text": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problem1 chose any book from booksgooglecom2 scroll a couple of pages down to cause the link in the address bar to change by adding an anchor with the page number3 hit the browser back buttonwhat is the expected resultusing anchors i believe the back button should either jump back to the correct page since the page number actually changes in the address bar or the browser should take the user to the previous webpage in the history as ie 7 and ff"
+        },
+        {
+          "chunk_id": "375-0",
+          "bug_id": "375",
+          "title": "gmail checkbox disappears",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.4225,
+          "text": "gmail checkbox disappears product version 0214927urls if applicable httpmailgooglecommailshva1inboxother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problemafter leaving the gmail inbox open for some time without viewing the tab i came back to find the checkboxes to the left of each message had disappeared both clicking on the gmail icon and using f5 to refresh had no effect moving the mouse over the area the checkbox should have drawn did reveal the outline of a checkbox but it could not be selected opening a new tab to gmail resolved the issue i was able to open messages normally General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "555-0",
+          "bug_id": "555",
+          "title": "Flash keeps playing after tab close",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.4041,
+          "text": "Flash keeps playing after tab close product version 0214927 1583urls if applicable httpwwwpopularmechanicscomscienceresearch4280765html as an exampleother browsers testedadd ok or fail after other browsers where you have tested this issue safari 3 not tested firefox 3 ok ie 7 not testedwhat steps will reproduce the problem1 go to a site with a flash music player like httpwwwpopularmechanicscomscienceresearch4280765html2 start the music player and allow it to buffer some seconds of music3 close the tabwhat is the expected resulti expected the music would stop when closing the tabwhat happens insteadthe music keeps playing for a couple of seconds after the tab got closed it wasnt even in the tab bar when i could still hear the musicplease provide any additional information below"
+        },
+        {
+          "chunk_id": "515-1",
+          "bug_id": "515",
+          "title": "Text is sometime squashed when page is rendered (text becomes very difficult to read)",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.4032,
+          "text": "in chrome there seems to be some attempt to squash the text to fit the window and the font is therefore very difficult to read my understanding is the ie uses smoothfont technology to make the text easier to read and some similar feature in chrome is really needed we all spend a lot of time looking at web pages and the font used and the way the text is rendered is incredibly important otherwise so far ive been impressed what is the expected resultwhat happens insteadplease provide any additional information below attach a screenshot if possible General Unknown Unknown Unknown Open"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:27:36.395789",
+    "report": "Users cannot login because the database connection times out.",
+    "analysis": {
+      "triage": {
+        "severity": "Low",
+        "priority": "P3",
+        "component": "Authentication",
+        "confidence": 0.7,
+        "reasoning": "Minor issue."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause resembles historical defect M4-001: Database connection timeout during login.",
+        "confidence": 0.58,
+        "supporting_evidence": [
+          {
+            "bug_id": "M4-001",
+            "title": "Database connection timeout during login",
+            "component": "Authentication",
+            "resolution": "Increased connection timeout, added connection retry handling, and verified database availability.",
+            "similarity": 0.518,
+            "summary": "Bug ID: M4-001 Title: Database connection timeout during login Description: Users cannot login because the application fails to establish a database connection. Component: Authentication Severity: High Priority: P1 Ro..."
+          },
+          {
+            "bug_id": "87",
+            "title": "Incorrect rendering of PNG alpha channel for opacity of less than 100%",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.3198,
+            "summary": "pause button area is moused should appear at an opacity of 70 set via css opacity attribute with png alpha transparency properly rendered what happens insteada chrome does not render png alpha channel properly at opac..."
+          },
+          {
+            "bug_id": "15",
+            "title": "Chrome(ium?) is not fully Open Source",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.3192,
+            "summary": "idformerly known as passport which also requiresthe acceptance of an eulawhile the license does conform to the letter of the open source definitionit certainly does not conform to the spirit of point 5 no discriminati..."
+          }
+        ],
+        "reasoning": "The submitted report is semantically close to historical bug records."
+      },
+      "duplicate_matches": [
+        {
+          "bug_id": "M4-001",
+          "title": "Database connection timeout during login",
+          "component": "Authentication",
+          "status": "Resolved",
+          "resolution": "Increased connection timeout, added connection retry handling, and verified database availability.",
+          "similarity": 0.518,
+          "summary": "Bug ID: M4-001 Title: Database connection timeout during login Description: Users cannot login because the application fails to establish a database connection. Component: Authentication Severity:...",
+          "resolution_summary": "Historical resolution: Increased connection timeout, added connection retry handling, and verified database availability.."
+        }
+      ],
+      "remediation": {
+        "recommendation": "Start from the historical resolution for duplicate candidate M4-001: Increased connection timeout, added connection retry handling, and verified database availability..",
+        "confidence": 0.54,
+        "action_items": [
+          "Reproduce the defect in the Authentication flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code.",
+          "Compare against historical bug M4-001 before implementing a new fix."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "Users cannot login because the database connection times out.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "resolved-M4-001",
+          "bug_id": "M4-001",
+          "title": "Database connection timeout during login",
+          "component": "Authentication",
+          "severity": "High",
+          "priority": "P1",
+          "status": "Resolved",
+          "resolution": "Increased connection timeout, added connection retry handling, and verified database availability.",
+          "score": 0.518,
+          "text": "Bug ID: M4-001\nTitle: Database connection timeout during login\nDescription: Users cannot login because the application fails to establish a database connection.\nComponent: Authentication\nSeverity: High\nPriority: P1\nRoot Cause: Database connection timeout caused by unavailable database service.\nResolution: Increased connection timeout, added connection retry handling, and verified database availability.\nStack Trace: DatabaseConnectionTimeout: connection timed out\nStatus: Resolved"
+        },
+        {
+          "chunk_id": "87-1",
+          "bug_id": "87",
+          "title": "Incorrect rendering of PNG alpha channel for opacity of less than 100%",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3198,
+          "text": "pause button area is moused should appear at an opacity of 70 set via css opacity attribute with png alpha transparency properly rendered what happens insteada chrome does not render png alpha channel properly at opacity of less than 100 instead the alpha channel constituent of the png graphic in this case transparency is rendered with a white bg as can be seen by visiting the url in question also watch the fade in and fade out of the thumbnails background note the ugly white bg that appears until the opacity of the region reaches 100 at which time the png alpha will be fully rendered including its transparencyplease provide any additional information below attach a screenshot if possible try"
+        },
+        {
+          "chunk_id": "15-1",
+          "bug_id": "15",
+          "title": "Chrome(ium?) is not fully Open Source",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3192,
+          "text": "idformerly known as passport which also requiresthe acceptance of an eulawhile the license does conform to the letter of the open source definitionit certainly does not conform to the spirit of point 5 no discriminationagainst persons or groups as acceptance of hundreds of pages ofmicrosoftlegalese without the backing of a lawyer is plain stupidplease provide any additional information below attach a screenshot ifpossiblenot applicable General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "194-0",
+          "bug_id": "194",
+          "title": "None of the plugins work",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3091,
+          "text": "None of the plugins work product version 0214927what is the expected resultfor flash shockwave etc to workwhat happens insteadcrashes noresponsive for long peroids of time then crashes the tab in the browser General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "87-0",
+          "bug_id": "87",
+          "title": "Incorrect rendering of PNG alpha channel for opacity of less than 100%",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3089,
+          "text": "Incorrect rendering of PNG alpha channel for opacity of less than 100% product version build 1583urls if applicable wwwidischargecomother browsers tested safari firefox ieadd ok or fail after other browsers where you have tested this issue safari 3 ok firefox 3 ok ie 7 okwhat steps will reproduce the problem1 go to the url indicated above2 click on the idischarge logo3 wait for the interior page to load4 drag mouse across the play pause button center of screenwhat is the expected resulta as indicated in the attached screen shot the images making up the thumbnail bar appears when the play pause button area is moused should appear at an opacity of 70 set via css opacity attribute with png alpha"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:36:19.957794",
+    "report": "Users cannot login because the database connection times out.",
+    "analysis": {
+      "triage": {
+        "severity": "Low",
+        "priority": "P3",
+        "component": "Authentication",
+        "confidence": 0.7,
+        "reasoning": "Minor issue."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause resembles historical defect M4-001: Database connection timeout during login.",
+        "confidence": 0.58,
+        "supporting_evidence": [
+          {
+            "bug_id": "M4-001",
+            "title": "Database connection timeout during login",
+            "component": "Authentication",
+            "resolution": "Increased connection timeout, added connection retry handling, and verified database availability.",
+            "similarity": 0.518,
+            "summary": "Bug ID: M4-001 Title: Database connection timeout during login Description: Users cannot login because the application fails to establish a database connection. Component: Authentication Severity: High Priority: P1 Ro..."
+          },
+          {
+            "bug_id": "87",
+            "title": "Incorrect rendering of PNG alpha channel for opacity of less than 100%",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.3198,
+            "summary": "pause button area is moused should appear at an opacity of 70 set via css opacity attribute with png alpha transparency properly rendered what happens insteada chrome does not render png alpha channel properly at opac..."
+          },
+          {
+            "bug_id": "15",
+            "title": "Chrome(ium?) is not fully Open Source",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.3192,
+            "summary": "idformerly known as passport which also requiresthe acceptance of an eulawhile the license does conform to the letter of the open source definitionit certainly does not conform to the spirit of point 5 no discriminati..."
+          }
+        ],
+        "reasoning": "The submitted report is semantically close to historical bug records."
+      },
+      "duplicate_matches": [
+        {
+          "bug_id": "M4-001",
+          "title": "Database connection timeout during login",
+          "component": "Authentication",
+          "status": "Resolved",
+          "resolution": "Increased connection timeout, added connection retry handling, and verified database availability.",
+          "similarity": 0.518,
+          "summary": "Bug ID: M4-001 Title: Database connection timeout during login Description: Users cannot login because the application fails to establish a database connection. Component: Authentication Severity:...",
+          "resolution_summary": "Historical resolution: Increased connection timeout, added connection retry handling, and verified database availability.."
+        }
+      ],
+      "remediation": {
+        "recommendation": "Start from the historical resolution for duplicate candidate M4-001: Increased connection timeout, added connection retry handling, and verified database availability..",
+        "confidence": 0.54,
+        "action_items": [
+          "Reproduce the defect in the Authentication flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code.",
+          "Compare against historical bug M4-001 before implementing a new fix."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "Users cannot login because the database connection times out.",
+      "top_k": 10,
+      "matches": [
+        {
+          "chunk_id": "resolved-M4-001",
+          "bug_id": "M4-001",
+          "title": "Database connection timeout during login",
+          "component": "Authentication",
+          "severity": "High",
+          "priority": "P1",
+          "status": "Resolved",
+          "resolution": "Increased connection timeout, added connection retry handling, and verified database availability.",
+          "score": 0.518,
+          "text": "Bug ID: M4-001\nTitle: Database connection timeout during login\nDescription: Users cannot login because the application fails to establish a database connection.\nComponent: Authentication\nSeverity: High\nPriority: P1\nRoot Cause: Database connection timeout caused by unavailable database service.\nResolution: Increased connection timeout, added connection retry handling, and verified database availability.\nStack Trace: DatabaseConnectionTimeout: connection timed out\nStatus: Resolved"
+        },
+        {
+          "chunk_id": "87-1",
+          "bug_id": "87",
+          "title": "Incorrect rendering of PNG alpha channel for opacity of less than 100%",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3198,
+          "text": "pause button area is moused should appear at an opacity of 70 set via css opacity attribute with png alpha transparency properly rendered what happens insteada chrome does not render png alpha channel properly at opacity of less than 100 instead the alpha channel constituent of the png graphic in this case transparency is rendered with a white bg as can be seen by visiting the url in question also watch the fade in and fade out of the thumbnails background note the ugly white bg that appears until the opacity of the region reaches 100 at which time the png alpha will be fully rendered including its transparencyplease provide any additional information below attach a screenshot if possible try"
+        },
+        {
+          "chunk_id": "15-1",
+          "bug_id": "15",
+          "title": "Chrome(ium?) is not fully Open Source",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3192,
+          "text": "idformerly known as passport which also requiresthe acceptance of an eulawhile the license does conform to the letter of the open source definitionit certainly does not conform to the spirit of point 5 no discriminationagainst persons or groups as acceptance of hundreds of pages ofmicrosoftlegalese without the backing of a lawyer is plain stupidplease provide any additional information below attach a screenshot ifpossiblenot applicable General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "194-0",
+          "bug_id": "194",
+          "title": "None of the plugins work",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3091,
+          "text": "None of the plugins work product version 0214927what is the expected resultfor flash shockwave etc to workwhat happens insteadcrashes noresponsive for long peroids of time then crashes the tab in the browser General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "87-0",
+          "bug_id": "87",
+          "title": "Incorrect rendering of PNG alpha channel for opacity of less than 100%",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3089,
+          "text": "Incorrect rendering of PNG alpha channel for opacity of less than 100% product version build 1583urls if applicable wwwidischargecomother browsers tested safari firefox ieadd ok or fail after other browsers where you have tested this issue safari 3 ok firefox 3 ok ie 7 okwhat steps will reproduce the problem1 go to the url indicated above2 click on the idischarge logo3 wait for the interior page to load4 drag mouse across the play pause button center of screenwhat is the expected resulta as indicated in the attached screen shot the images making up the thumbnail bar appears when the play pause button area is moused should appear at an opacity of 70 set via css opacity attribute with png alpha"
+        },
+        {
+          "chunk_id": "240-0",
+          "bug_id": "240",
+          "title": "Rendering bug, does not properly render header image for URL",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3055,
+          "text": "Rendering bug, does not properly render header image for URL product version 0214927urls if applicable httpblackhandwarfarecomforumindexphpother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 browse to httpblackhandwarfarecomforumindexphp2 see that the headerlogo image isnt rendering properly in the title box3what is the expected resultexpected result is the rightside of the header box being placed appropriately with the center logo image displaying in the centerwhat happens insteadin chrome the rightside of the header box isnt displayed on the right rather its smushed together with the left side and the center image isnt displayingplease provide any additional information below attach a screenshot if possible attached"
+        },
+        {
+          "chunk_id": "240-1",
+          "bug_id": "240",
+          "title": "Rendering bug, does not properly render header image for URL",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3039,
+          "text": "the left side and the center image isnt displayingplease provide any additional information below attach a screenshot if possible attached 3 screenshots cropped views of the same top portion of the page chrome version is wrong renders properly in both firefox 3 and ie7 General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "15-0",
+          "bug_id": "15",
+          "title": "Chrome(ium?) is not fully Open Source",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2983,
+          "text": "Chrome(ium?) is not fully Open Source product version allurls if applicable other browsers tested not applicableadd ok or fail after other browsers where you have tested this issue safari 3 not applicable firefox 3 not applicable ie 7 not applicablewhat steps will reproduce the problem1 download the sourcecodewhat is the expected resultsourcecode is compilable using nothing but open source softwarewhat happens insteadone of the buildrequirements is microsoft visual studio 2005 the usage ofthe free as in beer visual studio express i dont even know if theexpress version is enough requires acceptance of the eula and the creationof a mswindows live idformerly known as passport which also requiresthe acceptance of an eulawhile the license does conform to the letter of the"
+        },
+        {
+          "chunk_id": "72-0",
+          "bug_id": "72",
+          "title": "Selecting entire lines instead of the actual text string on double click",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.293,
+          "text": "Selecting entire lines instead of the actual text string on double click product version 0214927 1583urls if applicable multiple sites httpfacebookcom httpyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issue safari 3 na firefox 3 ok ie 7 okwhat steps will reproduce the problem1 select a singlemultiline text with double clickwhat is the expected resultthe double click should only mark the area actually containing text not the white space around itwhat happens insteadsingle line the text is marked incl the white space after the end of the textmulti line the text is marked incl the white space after the end of the text and as in case some of the text are marked unreadable"
+        },
+        {
+          "chunk_id": "492-0",
+          "bug_id": "492",
+          "title": "iFrame has zero height on www.war-europe.com",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2928,
+          "text": "iFrame has zero height on www.war-europe.com product version 0214927urls if applicable httpwwwwareuropecomother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 scroll down the webpage 2 the webpage gets unreadable after de first scroll3 chrome only shows the first part of the webpagewhat is the expected resultto read all the content of the webpageswhat happens insteadthe text below the first screen is not showing properlyplease provide any additional information below attach a screenshot if possible2 screenshots provided one from chrome and the other from ie7 as example of the problem General Unknown Unknown Unknown Open"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:38:06.349734",
+    "report": "PDF preview crashes when opened in a private window. TypeError: this.viewer is null at PdfViewer.render viewer.js:214",
+    "analysis": {
+      "triage": {
+        "severity": "Critical",
+        "priority": "P1",
+        "component": "PDF Viewer",
+        "confidence": 0.95,
+        "reasoning": "Crash detected."
+      },
+      "log_analysis": {
+        "exception_type": "TypeError",
+        "failure_point": "Unknown",
+        "affected_code_path": "PdfViewer.render",
+        "confidence": 0.9,
+        "reasoning": "TypeError detected from submitted stack trace."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause is an unhandled TypeError in the PDF Viewer component.",
+        "confidence": 0.68,
+        "supporting_evidence": [
+          {
+            "bug_id": "421",
+            "title": "NT Auth login doesn't work",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2584,
+            "summary": "NT Auth login doesn't work product version see aboutversionurls if applicable any website site using nt authenticationother browsers testedadd ok or fail after other browsers where you have tested this issue chrome fa..."
+          },
+          {
+            "bug_id": "543",
+            "title": "C0 (and other) control characters should have visual representations",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2403,
+            "summary": "C0 (and other) control characters should have visual representations product version see aboutversionurls if applicable phpmyadminother browsers testedadd ok or fail after other browsers where you have tested this iss..."
+          },
+          {
+            "bug_id": "285",
+            "title": "Assigning this.value on key press causes jump to end of textarea",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.1935,
+            "summary": "before inserting the new characterscausing them to appear in an undesired locationplease provide any additional information below attach a screenshot ifpossiblethe javascript code which causes this issue is commonly u..."
+          }
+        ],
+        "reasoning": "The submitted evidence includes a recognizable exception and similar historical defects."
+      },
+      "duplicate_matches": [],
+      "remediation": {
+        "recommendation": "Fix the PDF Viewer code path by adding validation and error handling around the operation that triggers TypeError.",
+        "confidence": 0.54,
+        "action_items": [
+          "Reproduce the defect in the PDF Viewer flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code.",
+          "Trace the TypeError source and guard the failing object or input before it is used."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "PDF preview crashes when opened in a private window. TypeError: this.viewer is null at PdfViewer.render viewer.js:214",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "421-0",
+          "bug_id": "421",
+          "title": "NT Auth login doesn't work",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2584,
+          "text": "NT Auth login doesn't work product version see aboutversionurls if applicable any website site using nt authenticationother browsers testedadd ok or fail after other browsers where you have tested this issue chrome fail safari 3 fail firefox 3 ok ie 7 ok opera 95 failwhat steps will reproduce the problem1 try to log into a website that has nt auth usernamepasswordwhat is the expected resultshould be able to log into sitewhat happens insteadbrowser keeps asking for username and passwordplease provide any additional information below attach a screenshot if possiblei know nt auth is a microsoft thing but it does work in firefox and a lot of it staffs wont allow clearopen usernamepasswords in a microsoft environment and will only use"
+        },
+        {
+          "chunk_id": "543-0",
+          "bug_id": "543",
+          "title": "C0 (and other) control characters should have visual representations",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2403,
+          "text": "C0 (and other) control characters should have visual representations product version see aboutversionurls if applicable phpmyadminother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 failwhat steps will reproduce the problem1 viewing bitfields in a mysqldatabaseschema with phpmyadmin2 if a bit is set in firefox a char is displayed marking the filed as set this char looks like a small table with some numbers see attached file3 chrome and ie does not display anything so if the bit is set there is no way of getting a displayed information for iti htink it depends on the charset or the characters available in chromewhat is the expected resultsee the screenshotwhat"
+        },
+        {
+          "chunk_id": "285-1",
+          "bug_id": "285",
+          "title": "Assigning this.value on key press causes jump to end of textarea",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.1935,
+          "text": "before inserting the new characterscausing them to appear in an undesired locationplease provide any additional information below attach a screenshot ifpossiblethe javascript code which causes this issue is commonly used in shoutboxesor other things of that nature in order to give the user a guideline forhow much they can type as to not surprise them when their message is cutoff by the remote script General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "161-0",
+          "bug_id": "161",
+          "title": "unable to scroll up using a laptop's tracking pad",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.1871,
+          "text": "unable to scroll up using a laptop's tracking pad product version 0214927urls if applicable any pageother browsers testedadd ok or fail after other browsers where you have tested this issue safari 3 works firefox 3 works ie 7 workswhat steps will reproduce the problem1 open any tab in a laptop2 scroll down using tracking pad3 try to scroll up using the tracking pad of laptop you simply cannot scroll up i tried this on at least three different laptops and it doesnt seem to work what is the expected resultwhat happens insteadplease provide any additional information below attach a screenshot if possible General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "578-0",
+          "bug_id": "578",
+          "title": "Facebook \"ADD a Personal Message Not working\"",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.1839,
+          "text": "Facebook \"ADD a Personal Message Not working\" product version 2149urls if applicable wwwfacebookcomother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3okie 7what steps will reproduce the problem1 login into facebook2 add a new friend3 try adding add a personal message in the invitebhaaam it wont open the text boxwhat is the expected resultwhat happens insteadplease provide any additional information below attach a screenshot if possible General Unknown Unknown Unknown Open"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:43:28.173202",
+    "report": "Users cannot login because the database connection times out.\r\n\r\nDatabaseConnectionTimeout: connection timed out.",
+    "analysis": {
+      "triage": {
+        "severity": "Low",
+        "priority": "P3",
+        "component": "Authentication",
+        "confidence": 0.7,
+        "reasoning": "Minor issue."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause is a timeout or slow dependency path affecting the Authentication component.",
+        "confidence": 0.58,
+        "supporting_evidence": [
+          {
+            "bug_id": "M4-001",
+            "title": "Database connection timeout during login",
+            "component": "Authentication",
+            "resolution": "Increased connection timeout, added connection retry handling, and verified database availability.",
+            "similarity": 0.5418,
+            "summary": "Bug ID: M4-001 Title: Database connection timeout during login Description: Users cannot login because the application fails to establish a database connection. Component: Authentication Severity: High Priority: P1 Ro..."
+          },
+          {
+            "bug_id": "87",
+            "title": "Incorrect rendering of PNG alpha channel for opacity of less than 100%",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2715,
+            "summary": "pause button area is moused should appear at an opacity of 70 set via css opacity attribute with png alpha transparency properly rendered what happens insteada chrome does not render png alpha channel properly at opac..."
+          },
+          {
+            "bug_id": "551",
+            "title": "Cannot remove search engines",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2609,
+            "summary": "Cannot remove search engines product version 0214927 1583what steps will reproduce the problem1 rightclick the address bar and choose edit search engines2 select an engine and click removewhat is the expected resultth..."
+          }
+        ],
+        "reasoning": "Timeout language in the report points to latency, dependency, or retry handling issues."
+      },
+      "duplicate_matches": [
+        {
+          "bug_id": "M4-001",
+          "title": "Database connection timeout during login",
+          "component": "Authentication",
+          "status": "Resolved",
+          "resolution": "Increased connection timeout, added connection retry handling, and verified database availability.",
+          "similarity": 0.5418,
+          "summary": "Bug ID: M4-001 Title: Database connection timeout during login Description: Users cannot login because the application fails to establish a database connection. Component: Authentication Severity:...",
+          "resolution_summary": "Historical resolution: Increased connection timeout, added connection retry handling, and verified database availability.."
+        }
+      ],
+      "remediation": {
+        "recommendation": "Start from the historical resolution for duplicate candidate M4-001: Increased connection timeout, added connection retry handling, and verified database availability..",
+        "confidence": 0.54,
+        "action_items": [
+          "Reproduce the defect in the Authentication flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code.",
+          "Review timeout settings, retry behavior, and dependency health for the failing request path.",
+          "Compare against historical bug M4-001 before implementing a new fix."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "Users cannot login because the database connection times out.\r\n\r\nDatabaseConnectionTimeout: connection timed out.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "resolved-M4-001",
+          "bug_id": "M4-001",
+          "title": "Database connection timeout during login",
+          "component": "Authentication",
+          "severity": "High",
+          "priority": "P1",
+          "status": "Resolved",
+          "resolution": "Increased connection timeout, added connection retry handling, and verified database availability.",
+          "score": 0.5418,
+          "text": "Bug ID: M4-001\nTitle: Database connection timeout during login\nDescription: Users cannot login because the application fails to establish a database connection.\nComponent: Authentication\nSeverity: High\nPriority: P1\nRoot Cause: Database connection timeout caused by unavailable database service.\nResolution: Increased connection timeout, added connection retry handling, and verified database availability.\nStack Trace: DatabaseConnectionTimeout: connection timed out\nStatus: Resolved"
+        },
+        {
+          "chunk_id": "87-1",
+          "bug_id": "87",
+          "title": "Incorrect rendering of PNG alpha channel for opacity of less than 100%",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2715,
+          "text": "pause button area is moused should appear at an opacity of 70 set via css opacity attribute with png alpha transparency properly rendered what happens insteada chrome does not render png alpha channel properly at opacity of less than 100 instead the alpha channel constituent of the png graphic in this case transparency is rendered with a white bg as can be seen by visiting the url in question also watch the fade in and fade out of the thumbnails background note the ugly white bg that appears until the opacity of the region reaches 100 at which time the png alpha will be fully rendered including its transparencyplease provide any additional information below attach a screenshot if possible try"
+        },
+        {
+          "chunk_id": "551-0",
+          "bug_id": "551",
+          "title": "Cannot remove search engines",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2609,
+          "text": "Cannot remove search engines product version 0214927 1583what steps will reproduce the problem1 rightclick the address bar and choose edit search engines2 select an engine and click removewhat is the expected resultthe selected engine should be removedwhat happens insteadnothingplease provide any additional information below attach a screenshot if possible General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "39-0",
+          "bug_id": "39",
+          "title": "Error 4 on re-installing Chrome",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2572,
+          "text": "Error 4 on re-installing Chrome product version recently released betaurls if applicable other browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3firefox 3ie 7what steps will reproduce the problem123what is the expected resultwhat happens insteadi installed the danish version of chrome then uninstalled it to reinstallthe english version and the attached error message occurs at the end ofthe installation processplease provide any additional information below attach a screenshot ifpossible General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "194-0",
+          "bug_id": "194",
+          "title": "None of the plugins work",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.257,
+          "text": "None of the plugins work product version 0214927what is the expected resultfor flash shockwave etc to workwhat happens insteadcrashes noresponsive for long peroids of time then crashes the tab in the browser General Unknown Unknown Unknown Open"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:43:30.245386",
+    "report": "Users cannot login because the database connection times out.\r\n\r\nDatabaseConnectionTimeout: connection timed out.",
+    "analysis": {
+      "triage": {
+        "severity": "Low",
+        "priority": "P3",
+        "component": "Authentication",
+        "confidence": 0.7,
+        "reasoning": "Minor issue."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause is a timeout or slow dependency path affecting the Authentication component.",
+        "confidence": 0.58,
+        "supporting_evidence": [
+          {
+            "bug_id": "M4-001",
+            "title": "Database connection timeout during login",
+            "component": "Authentication",
+            "resolution": "Increased connection timeout, added connection retry handling, and verified database availability.",
+            "similarity": 0.5418,
+            "summary": "Bug ID: M4-001 Title: Database connection timeout during login Description: Users cannot login because the application fails to establish a database connection. Component: Authentication Severity: High Priority: P1 Ro..."
+          },
+          {
+            "bug_id": "87",
+            "title": "Incorrect rendering of PNG alpha channel for opacity of less than 100%",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2715,
+            "summary": "pause button area is moused should appear at an opacity of 70 set via css opacity attribute with png alpha transparency properly rendered what happens insteada chrome does not render png alpha channel properly at opac..."
+          },
+          {
+            "bug_id": "551",
+            "title": "Cannot remove search engines",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2609,
+            "summary": "Cannot remove search engines product version 0214927 1583what steps will reproduce the problem1 rightclick the address bar and choose edit search engines2 select an engine and click removewhat is the expected resultth..."
+          }
+        ],
+        "reasoning": "Timeout language in the report points to latency, dependency, or retry handling issues."
+      },
+      "duplicate_matches": [
+        {
+          "bug_id": "M4-001",
+          "title": "Database connection timeout during login",
+          "component": "Authentication",
+          "status": "Resolved",
+          "resolution": "Increased connection timeout, added connection retry handling, and verified database availability.",
+          "similarity": 0.5418,
+          "summary": "Bug ID: M4-001 Title: Database connection timeout during login Description: Users cannot login because the application fails to establish a database connection. Component: Authentication Severity:...",
+          "resolution_summary": "Historical resolution: Increased connection timeout, added connection retry handling, and verified database availability.."
+        }
+      ],
+      "remediation": {
+        "recommendation": "Start from the historical resolution for duplicate candidate M4-001: Increased connection timeout, added connection retry handling, and verified database availability..",
+        "confidence": 0.54,
+        "action_items": [
+          "Reproduce the defect in the Authentication flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code.",
+          "Review timeout settings, retry behavior, and dependency health for the failing request path.",
+          "Compare against historical bug M4-001 before implementing a new fix."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "Users cannot login because the database connection times out.\r\n\r\nDatabaseConnectionTimeout: connection timed out.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "resolved-M4-001",
+          "bug_id": "M4-001",
+          "title": "Database connection timeout during login",
+          "component": "Authentication",
+          "severity": "High",
+          "priority": "P1",
+          "status": "Resolved",
+          "resolution": "Increased connection timeout, added connection retry handling, and verified database availability.",
+          "score": 0.5418,
+          "text": "Bug ID: M4-001\nTitle: Database connection timeout during login\nDescription: Users cannot login because the application fails to establish a database connection.\nComponent: Authentication\nSeverity: High\nPriority: P1\nRoot Cause: Database connection timeout caused by unavailable database service.\nResolution: Increased connection timeout, added connection retry handling, and verified database availability.\nStack Trace: DatabaseConnectionTimeout: connection timed out\nStatus: Resolved"
+        },
+        {
+          "chunk_id": "87-1",
+          "bug_id": "87",
+          "title": "Incorrect rendering of PNG alpha channel for opacity of less than 100%",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2715,
+          "text": "pause button area is moused should appear at an opacity of 70 set via css opacity attribute with png alpha transparency properly rendered what happens insteada chrome does not render png alpha channel properly at opacity of less than 100 instead the alpha channel constituent of the png graphic in this case transparency is rendered with a white bg as can be seen by visiting the url in question also watch the fade in and fade out of the thumbnails background note the ugly white bg that appears until the opacity of the region reaches 100 at which time the png alpha will be fully rendered including its transparencyplease provide any additional information below attach a screenshot if possible try"
+        },
+        {
+          "chunk_id": "551-0",
+          "bug_id": "551",
+          "title": "Cannot remove search engines",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2609,
+          "text": "Cannot remove search engines product version 0214927 1583what steps will reproduce the problem1 rightclick the address bar and choose edit search engines2 select an engine and click removewhat is the expected resultthe selected engine should be removedwhat happens insteadnothingplease provide any additional information below attach a screenshot if possible General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "39-0",
+          "bug_id": "39",
+          "title": "Error 4 on re-installing Chrome",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2572,
+          "text": "Error 4 on re-installing Chrome product version recently released betaurls if applicable other browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3firefox 3ie 7what steps will reproduce the problem123what is the expected resultwhat happens insteadi installed the danish version of chrome then uninstalled it to reinstallthe english version and the attached error message occurs at the end ofthe installation processplease provide any additional information below attach a screenshot ifpossible General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "194-0",
+          "bug_id": "194",
+          "title": "None of the plugins work",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.257,
+          "text": "None of the plugins work product version 0214927what is the expected resultfor flash shockwave etc to workwhat happens insteadcrashes noresponsive for long peroids of time then crashes the tab in the browser General Unknown Unknown Unknown Open"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:43:31.574258",
+    "report": "Users cannot login because the database connection times out.\r\n\r\nDatabaseConnectionTimeout: connection timed out.",
+    "analysis": {
+      "triage": {
+        "severity": "Low",
+        "priority": "P3",
+        "component": "Authentication",
+        "confidence": 0.7,
+        "reasoning": "Minor issue."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause is a timeout or slow dependency path affecting the Authentication component.",
+        "confidence": 0.58,
+        "supporting_evidence": [
+          {
+            "bug_id": "M4-001",
+            "title": "Database connection timeout during login",
+            "component": "Authentication",
+            "resolution": "Increased connection timeout, added connection retry handling, and verified database availability.",
+            "similarity": 0.5418,
+            "summary": "Bug ID: M4-001 Title: Database connection timeout during login Description: Users cannot login because the application fails to establish a database connection. Component: Authentication Severity: High Priority: P1 Ro..."
+          },
+          {
+            "bug_id": "87",
+            "title": "Incorrect rendering of PNG alpha channel for opacity of less than 100%",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2715,
+            "summary": "pause button area is moused should appear at an opacity of 70 set via css opacity attribute with png alpha transparency properly rendered what happens insteada chrome does not render png alpha channel properly at opac..."
+          },
+          {
+            "bug_id": "551",
+            "title": "Cannot remove search engines",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2609,
+            "summary": "Cannot remove search engines product version 0214927 1583what steps will reproduce the problem1 rightclick the address bar and choose edit search engines2 select an engine and click removewhat is the expected resultth..."
+          }
+        ],
+        "reasoning": "Timeout language in the report points to latency, dependency, or retry handling issues."
+      },
+      "duplicate_matches": [
+        {
+          "bug_id": "M4-001",
+          "title": "Database connection timeout during login",
+          "component": "Authentication",
+          "status": "Resolved",
+          "resolution": "Increased connection timeout, added connection retry handling, and verified database availability.",
+          "similarity": 0.5418,
+          "summary": "Bug ID: M4-001 Title: Database connection timeout during login Description: Users cannot login because the application fails to establish a database connection. Component: Authentication Severity:...",
+          "resolution_summary": "Historical resolution: Increased connection timeout, added connection retry handling, and verified database availability.."
+        }
+      ],
+      "remediation": {
+        "recommendation": "Start from the historical resolution for duplicate candidate M4-001: Increased connection timeout, added connection retry handling, and verified database availability..",
+        "confidence": 0.54,
+        "action_items": [
+          "Reproduce the defect in the Authentication flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code.",
+          "Review timeout settings, retry behavior, and dependency health for the failing request path.",
+          "Compare against historical bug M4-001 before implementing a new fix."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "Users cannot login because the database connection times out.\r\n\r\nDatabaseConnectionTimeout: connection timed out.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "resolved-M4-001",
+          "bug_id": "M4-001",
+          "title": "Database connection timeout during login",
+          "component": "Authentication",
+          "severity": "High",
+          "priority": "P1",
+          "status": "Resolved",
+          "resolution": "Increased connection timeout, added connection retry handling, and verified database availability.",
+          "score": 0.5418,
+          "text": "Bug ID: M4-001\nTitle: Database connection timeout during login\nDescription: Users cannot login because the application fails to establish a database connection.\nComponent: Authentication\nSeverity: High\nPriority: P1\nRoot Cause: Database connection timeout caused by unavailable database service.\nResolution: Increased connection timeout, added connection retry handling, and verified database availability.\nStack Trace: DatabaseConnectionTimeout: connection timed out\nStatus: Resolved"
+        },
+        {
+          "chunk_id": "87-1",
+          "bug_id": "87",
+          "title": "Incorrect rendering of PNG alpha channel for opacity of less than 100%",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2715,
+          "text": "pause button area is moused should appear at an opacity of 70 set via css opacity attribute with png alpha transparency properly rendered what happens insteada chrome does not render png alpha channel properly at opacity of less than 100 instead the alpha channel constituent of the png graphic in this case transparency is rendered with a white bg as can be seen by visiting the url in question also watch the fade in and fade out of the thumbnails background note the ugly white bg that appears until the opacity of the region reaches 100 at which time the png alpha will be fully rendered including its transparencyplease provide any additional information below attach a screenshot if possible try"
+        },
+        {
+          "chunk_id": "551-0",
+          "bug_id": "551",
+          "title": "Cannot remove search engines",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2609,
+          "text": "Cannot remove search engines product version 0214927 1583what steps will reproduce the problem1 rightclick the address bar and choose edit search engines2 select an engine and click removewhat is the expected resultthe selected engine should be removedwhat happens insteadnothingplease provide any additional information below attach a screenshot if possible General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "39-0",
+          "bug_id": "39",
+          "title": "Error 4 on re-installing Chrome",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2572,
+          "text": "Error 4 on re-installing Chrome product version recently released betaurls if applicable other browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3firefox 3ie 7what steps will reproduce the problem123what is the expected resultwhat happens insteadi installed the danish version of chrome then uninstalled it to reinstallthe english version and the attached error message occurs at the end ofthe installation processplease provide any additional information below attach a screenshot ifpossible General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "194-0",
+          "bug_id": "194",
+          "title": "None of the plugins work",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.257,
+          "text": "None of the plugins work product version 0214927what is the expected resultfor flash shockwave etc to workwhat happens insteadcrashes noresponsive for long peroids of time then crashes the tab in the browser General Unknown Unknown Unknown Open"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:48:02.539880",
+    "report": "Authentication fails after entering valid credentials.\r\nThe login API returns HTTP 401 unexpectedly.",
+    "analysis": {
+      "triage": {
+        "severity": "Low",
+        "priority": "P3",
+        "component": "Authentication",
+        "confidence": 0.7,
+        "reasoning": "Minor issue."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause resembles historical defect 590: Browsing Google books and browser back button.",
+        "confidence": 0.53,
+        "supporting_evidence": [
+          {
+            "bug_id": "590",
+            "title": "Browsing Google books and browser back button",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2485,
+            "summary": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or..."
+          },
+          {
+            "bug_id": "19",
+            "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2461,
+            "summary": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browsers where you have tes..."
+          },
+          {
+            "bug_id": "542",
+            "title": "zooming problem in <div> and <p>",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2091,
+            "summary": "zooming problem in <div> and <p> product version 0214927urls if applicable httpwwwyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat st..."
+          }
+        ],
+        "reasoning": "The submitted report is semantically close to historical bug records."
+      },
+      "duplicate_matches": [],
+      "remediation": {
+        "recommendation": "Investigate the Authentication code path highlighted by the root cause hypothesis: The most probable root cause resembles historical defect 590: Browsing Google books and browser back button..",
+        "confidence": 0.4,
+        "action_items": [
+          "Reproduce the defect in the Authentication flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "Authentication fails after entering valid credentials.\r\nThe login API returns HTTP 401 unexpectedly.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "590-0",
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2485,
+          "text": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problem1 chose any book from booksgooglecom2 scroll a couple of pages down to cause the link in the address bar to change by adding an anchor with the page number3 hit the browser back buttonwhat is the expected resultusing anchors i believe the back button should either jump back to the correct page since the page number actually changes in the address bar or the browser should take the user to the previous webpage in the history as ie 7 and ff"
+        },
+        {
+          "chunk_id": "19-0",
+          "bug_id": "19",
+          "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2461,
+          "text": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 configure the browser to use a proxy i use squid 27stable 2 withauthentication enabled2 chrome will prompt for a username and password to auth with the proxy3 browsing continues normally for the sessionwhat is the expected resultintegrated authentication in the browser would use the current users logoncredentials to authenticate with the proxy serverwhat happens insteadchrome will prompt for a username and password to auth with the proxy entering the credentials manually allow the"
+        },
+        {
+          "chunk_id": "542-0",
+          "bug_id": "542",
+          "title": "zooming problem in <div> and <p>",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2091,
+          "text": "zooming problem in <div> and <p> product version 0214927urls if applicable httpwwwyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 goto wwwyotubecom2 press ctrl crontrol plus add sign to zoom on the page 3 after 3 to 5 zoom the layout fails and elements are not in the right placewhat is the expected resultzooming should not change the layout of web page as in mozilla firefox or ie7what happens insteadthe look of website would change after zooming General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "375-0",
+          "bug_id": "375",
+          "title": "gmail checkbox disappears",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2085,
+          "text": "gmail checkbox disappears product version 0214927urls if applicable httpmailgooglecommailshva1inboxother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problemafter leaving the gmail inbox open for some time without viewing the tab i came back to find the checkboxes to the left of each message had disappeared both clicking on the gmail icon and using f5 to refresh had no effect moving the mouse over the area the checkbox should have drawn did reveal the outline of a checkbox but it could not be selected opening a new tab to gmail resolved the issue i was able to open messages normally General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "294-1",
+          "bug_id": "294",
+          "title": "Drag & drop not supported in XStandard plug-in and in plug-in area that holds a video",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2066,
+          "text": "location5 drag a gif or jpeg image from the desktop or another location on the hard drive into the plugin the plugin should upload the image to the server and display itwhat is the expected resultdrag drop should workwhat happens insteaddrag drop does not workplease provide any additional information below attach a screenshot if possiblewe are the developers of xstandard plugin General Unknown Unknown Unknown Open"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:48:10.455728",
+    "report": "Authentication fails after entering valid credentials.\r\nThe login API returns HTTP 401 unexpectedly.",
+    "analysis": {
+      "triage": {
+        "severity": "Low",
+        "priority": "P3",
+        "component": "Authentication",
+        "confidence": 0.7,
+        "reasoning": "Minor issue."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause resembles historical defect 590: Browsing Google books and browser back button.",
+        "confidence": 0.53,
+        "supporting_evidence": [
+          {
+            "bug_id": "590",
+            "title": "Browsing Google books and browser back button",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2485,
+            "summary": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or..."
+          },
+          {
+            "bug_id": "19",
+            "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2461,
+            "summary": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browsers where you have tes..."
+          },
+          {
+            "bug_id": "542",
+            "title": "zooming problem in <div> and <p>",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2091,
+            "summary": "zooming problem in <div> and <p> product version 0214927urls if applicable httpwwwyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat st..."
+          }
+        ],
+        "reasoning": "The submitted report is semantically close to historical bug records."
+      },
+      "duplicate_matches": [],
+      "remediation": {
+        "recommendation": "Investigate the Authentication code path highlighted by the root cause hypothesis: The most probable root cause resembles historical defect 590: Browsing Google books and browser back button..",
+        "confidence": 0.4,
+        "action_items": [
+          "Reproduce the defect in the Authentication flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "Authentication fails after entering valid credentials.\r\nThe login API returns HTTP 401 unexpectedly.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "590-0",
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2485,
+          "text": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problem1 chose any book from booksgooglecom2 scroll a couple of pages down to cause the link in the address bar to change by adding an anchor with the page number3 hit the browser back buttonwhat is the expected resultusing anchors i believe the back button should either jump back to the correct page since the page number actually changes in the address bar or the browser should take the user to the previous webpage in the history as ie 7 and ff"
+        },
+        {
+          "chunk_id": "19-0",
+          "bug_id": "19",
+          "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2461,
+          "text": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 configure the browser to use a proxy i use squid 27stable 2 withauthentication enabled2 chrome will prompt for a username and password to auth with the proxy3 browsing continues normally for the sessionwhat is the expected resultintegrated authentication in the browser would use the current users logoncredentials to authenticate with the proxy serverwhat happens insteadchrome will prompt for a username and password to auth with the proxy entering the credentials manually allow the"
+        },
+        {
+          "chunk_id": "542-0",
+          "bug_id": "542",
+          "title": "zooming problem in <div> and <p>",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2091,
+          "text": "zooming problem in <div> and <p> product version 0214927urls if applicable httpwwwyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 goto wwwyotubecom2 press ctrl crontrol plus add sign to zoom on the page 3 after 3 to 5 zoom the layout fails and elements are not in the right placewhat is the expected resultzooming should not change the layout of web page as in mozilla firefox or ie7what happens insteadthe look of website would change after zooming General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "375-0",
+          "bug_id": "375",
+          "title": "gmail checkbox disappears",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2085,
+          "text": "gmail checkbox disappears product version 0214927urls if applicable httpmailgooglecommailshva1inboxother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problemafter leaving the gmail inbox open for some time without viewing the tab i came back to find the checkboxes to the left of each message had disappeared both clicking on the gmail icon and using f5 to refresh had no effect moving the mouse over the area the checkbox should have drawn did reveal the outline of a checkbox but it could not be selected opening a new tab to gmail resolved the issue i was able to open messages normally General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "294-1",
+          "bug_id": "294",
+          "title": "Drag & drop not supported in XStandard plug-in and in plug-in area that holds a video",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2066,
+          "text": "location5 drag a gif or jpeg image from the desktop or another location on the hard drive into the plugin the plugin should upload the image to the server and display itwhat is the expected resultdrag drop should workwhat happens insteaddrag drop does not workplease provide any additional information below attach a screenshot if possiblewe are the developers of xstandard plugin General Unknown Unknown Unknown Open"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:48:13.034647",
+    "report": "Authentication fails after entering valid credentials.\r\nThe login API returns HTTP 401 unexpectedly.",
+    "analysis": {
+      "triage": {
+        "severity": "Low",
+        "priority": "P3",
+        "component": "Authentication",
+        "confidence": 0.7,
+        "reasoning": "Minor issue."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause resembles historical defect 590: Browsing Google books and browser back button.",
+        "confidence": 0.53,
+        "supporting_evidence": [
+          {
+            "bug_id": "590",
+            "title": "Browsing Google books and browser back button",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2485,
+            "summary": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or..."
+          },
+          {
+            "bug_id": "19",
+            "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2461,
+            "summary": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browsers where you have tes..."
+          },
+          {
+            "bug_id": "542",
+            "title": "zooming problem in <div> and <p>",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2091,
+            "summary": "zooming problem in <div> and <p> product version 0214927urls if applicable httpwwwyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat st..."
+          }
+        ],
+        "reasoning": "The submitted report is semantically close to historical bug records."
+      },
+      "duplicate_matches": [],
+      "remediation": {
+        "recommendation": "Investigate the Authentication code path highlighted by the root cause hypothesis: The most probable root cause resembles historical defect 590: Browsing Google books and browser back button..",
+        "confidence": 0.4,
+        "action_items": [
+          "Reproduce the defect in the Authentication flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "Authentication fails after entering valid credentials.\r\nThe login API returns HTTP 401 unexpectedly.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "590-0",
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2485,
+          "text": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problem1 chose any book from booksgooglecom2 scroll a couple of pages down to cause the link in the address bar to change by adding an anchor with the page number3 hit the browser back buttonwhat is the expected resultusing anchors i believe the back button should either jump back to the correct page since the page number actually changes in the address bar or the browser should take the user to the previous webpage in the history as ie 7 and ff"
+        },
+        {
+          "chunk_id": "19-0",
+          "bug_id": "19",
+          "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2461,
+          "text": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 configure the browser to use a proxy i use squid 27stable 2 withauthentication enabled2 chrome will prompt for a username and password to auth with the proxy3 browsing continues normally for the sessionwhat is the expected resultintegrated authentication in the browser would use the current users logoncredentials to authenticate with the proxy serverwhat happens insteadchrome will prompt for a username and password to auth with the proxy entering the credentials manually allow the"
+        },
+        {
+          "chunk_id": "542-0",
+          "bug_id": "542",
+          "title": "zooming problem in <div> and <p>",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2091,
+          "text": "zooming problem in <div> and <p> product version 0214927urls if applicable httpwwwyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 goto wwwyotubecom2 press ctrl crontrol plus add sign to zoom on the page 3 after 3 to 5 zoom the layout fails and elements are not in the right placewhat is the expected resultzooming should not change the layout of web page as in mozilla firefox or ie7what happens insteadthe look of website would change after zooming General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "375-0",
+          "bug_id": "375",
+          "title": "gmail checkbox disappears",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2085,
+          "text": "gmail checkbox disappears product version 0214927urls if applicable httpmailgooglecommailshva1inboxother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problemafter leaving the gmail inbox open for some time without viewing the tab i came back to find the checkboxes to the left of each message had disappeared both clicking on the gmail icon and using f5 to refresh had no effect moving the mouse over the area the checkbox should have drawn did reveal the outline of a checkbox but it could not be selected opening a new tab to gmail resolved the issue i was able to open messages normally General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "294-1",
+          "bug_id": "294",
+          "title": "Drag & drop not supported in XStandard plug-in and in plug-in area that holds a video",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2066,
+          "text": "location5 drag a gif or jpeg image from the desktop or another location on the hard drive into the plugin the plugin should upload the image to the server and display itwhat is the expected resultdrag drop should workwhat happens insteaddrag drop does not workplease provide any additional information below attach a screenshot if possiblewe are the developers of xstandard plugin General Unknown Unknown Unknown Open"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:48:13.907755",
+    "report": "Authentication fails after entering valid credentials.\r\nThe login API returns HTTP 401 unexpectedly.",
+    "analysis": {
+      "triage": {
+        "severity": "Low",
+        "priority": "P3",
+        "component": "Authentication",
+        "confidence": 0.7,
+        "reasoning": "Minor issue."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause resembles historical defect 590: Browsing Google books and browser back button.",
+        "confidence": 0.53,
+        "supporting_evidence": [
+          {
+            "bug_id": "590",
+            "title": "Browsing Google books and browser back button",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2485,
+            "summary": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or..."
+          },
+          {
+            "bug_id": "19",
+            "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2461,
+            "summary": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browsers where you have tes..."
+          },
+          {
+            "bug_id": "542",
+            "title": "zooming problem in <div> and <p>",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2091,
+            "summary": "zooming problem in <div> and <p> product version 0214927urls if applicable httpwwwyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat st..."
+          }
+        ],
+        "reasoning": "The submitted report is semantically close to historical bug records."
+      },
+      "duplicate_matches": [],
+      "remediation": {
+        "recommendation": "Investigate the Authentication code path highlighted by the root cause hypothesis: The most probable root cause resembles historical defect 590: Browsing Google books and browser back button..",
+        "confidence": 0.4,
+        "action_items": [
+          "Reproduce the defect in the Authentication flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "Authentication fails after entering valid credentials.\r\nThe login API returns HTTP 401 unexpectedly.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "590-0",
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2485,
+          "text": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problem1 chose any book from booksgooglecom2 scroll a couple of pages down to cause the link in the address bar to change by adding an anchor with the page number3 hit the browser back buttonwhat is the expected resultusing anchors i believe the back button should either jump back to the correct page since the page number actually changes in the address bar or the browser should take the user to the previous webpage in the history as ie 7 and ff"
+        },
+        {
+          "chunk_id": "19-0",
+          "bug_id": "19",
+          "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2461,
+          "text": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 configure the browser to use a proxy i use squid 27stable 2 withauthentication enabled2 chrome will prompt for a username and password to auth with the proxy3 browsing continues normally for the sessionwhat is the expected resultintegrated authentication in the browser would use the current users logoncredentials to authenticate with the proxy serverwhat happens insteadchrome will prompt for a username and password to auth with the proxy entering the credentials manually allow the"
+        },
+        {
+          "chunk_id": "542-0",
+          "bug_id": "542",
+          "title": "zooming problem in <div> and <p>",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2091,
+          "text": "zooming problem in <div> and <p> product version 0214927urls if applicable httpwwwyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 goto wwwyotubecom2 press ctrl crontrol plus add sign to zoom on the page 3 after 3 to 5 zoom the layout fails and elements are not in the right placewhat is the expected resultzooming should not change the layout of web page as in mozilla firefox or ie7what happens insteadthe look of website would change after zooming General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "375-0",
+          "bug_id": "375",
+          "title": "gmail checkbox disappears",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2085,
+          "text": "gmail checkbox disappears product version 0214927urls if applicable httpmailgooglecommailshva1inboxother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problemafter leaving the gmail inbox open for some time without viewing the tab i came back to find the checkboxes to the left of each message had disappeared both clicking on the gmail icon and using f5 to refresh had no effect moving the mouse over the area the checkbox should have drawn did reveal the outline of a checkbox but it could not be selected opening a new tab to gmail resolved the issue i was able to open messages normally General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "294-1",
+          "bug_id": "294",
+          "title": "Drag & drop not supported in XStandard plug-in and in plug-in area that holds a video",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2066,
+          "text": "location5 drag a gif or jpeg image from the desktop or another location on the hard drive into the plugin the plugin should upload the image to the server and display itwhat is the expected resultdrag drop should workwhat happens insteaddrag drop does not workplease provide any additional information below attach a screenshot if possiblewe are the developers of xstandard plugin General Unknown Unknown Unknown Open"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:48:14.621506",
+    "report": "Authentication fails after entering valid credentials.\r\nThe login API returns HTTP 401 unexpectedly.",
+    "analysis": {
+      "triage": {
+        "severity": "Low",
+        "priority": "P3",
+        "component": "Authentication",
+        "confidence": 0.7,
+        "reasoning": "Minor issue."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause resembles historical defect 590: Browsing Google books and browser back button.",
+        "confidence": 0.53,
+        "supporting_evidence": [
+          {
+            "bug_id": "590",
+            "title": "Browsing Google books and browser back button",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2485,
+            "summary": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or..."
+          },
+          {
+            "bug_id": "19",
+            "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2461,
+            "summary": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browsers where you have tes..."
+          },
+          {
+            "bug_id": "542",
+            "title": "zooming problem in <div> and <p>",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2091,
+            "summary": "zooming problem in <div> and <p> product version 0214927urls if applicable httpwwwyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat st..."
+          }
+        ],
+        "reasoning": "The submitted report is semantically close to historical bug records."
+      },
+      "duplicate_matches": [],
+      "remediation": {
+        "recommendation": "Investigate the Authentication code path highlighted by the root cause hypothesis: The most probable root cause resembles historical defect 590: Browsing Google books and browser back button..",
+        "confidence": 0.4,
+        "action_items": [
+          "Reproduce the defect in the Authentication flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "Authentication fails after entering valid credentials.\r\nThe login API returns HTTP 401 unexpectedly.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "590-0",
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2485,
+          "text": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problem1 chose any book from booksgooglecom2 scroll a couple of pages down to cause the link in the address bar to change by adding an anchor with the page number3 hit the browser back buttonwhat is the expected resultusing anchors i believe the back button should either jump back to the correct page since the page number actually changes in the address bar or the browser should take the user to the previous webpage in the history as ie 7 and ff"
+        },
+        {
+          "chunk_id": "19-0",
+          "bug_id": "19",
+          "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2461,
+          "text": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 configure the browser to use a proxy i use squid 27stable 2 withauthentication enabled2 chrome will prompt for a username and password to auth with the proxy3 browsing continues normally for the sessionwhat is the expected resultintegrated authentication in the browser would use the current users logoncredentials to authenticate with the proxy serverwhat happens insteadchrome will prompt for a username and password to auth with the proxy entering the credentials manually allow the"
+        },
+        {
+          "chunk_id": "542-0",
+          "bug_id": "542",
+          "title": "zooming problem in <div> and <p>",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2091,
+          "text": "zooming problem in <div> and <p> product version 0214927urls if applicable httpwwwyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 goto wwwyotubecom2 press ctrl crontrol plus add sign to zoom on the page 3 after 3 to 5 zoom the layout fails and elements are not in the right placewhat is the expected resultzooming should not change the layout of web page as in mozilla firefox or ie7what happens insteadthe look of website would change after zooming General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "375-0",
+          "bug_id": "375",
+          "title": "gmail checkbox disappears",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2085,
+          "text": "gmail checkbox disappears product version 0214927urls if applicable httpmailgooglecommailshva1inboxother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problemafter leaving the gmail inbox open for some time without viewing the tab i came back to find the checkboxes to the left of each message had disappeared both clicking on the gmail icon and using f5 to refresh had no effect moving the mouse over the area the checkbox should have drawn did reveal the outline of a checkbox but it could not be selected opening a new tab to gmail resolved the issue i was able to open messages normally General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "294-1",
+          "bug_id": "294",
+          "title": "Drag & drop not supported in XStandard plug-in and in plug-in area that holds a video",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2066,
+          "text": "location5 drag a gif or jpeg image from the desktop or another location on the hard drive into the plugin the plugin should upload the image to the server and display itwhat is the expected resultdrag drop should workwhat happens insteaddrag drop does not workplease provide any additional information below attach a screenshot if possiblewe are the developers of xstandard plugin General Unknown Unknown Unknown Open"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:48:14.916703",
+    "report": "Authentication fails after entering valid credentials.\r\nThe login API returns HTTP 401 unexpectedly.",
+    "analysis": {
+      "triage": {
+        "severity": "Low",
+        "priority": "P3",
+        "component": "Authentication",
+        "confidence": 0.7,
+        "reasoning": "Minor issue."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause resembles historical defect 590: Browsing Google books and browser back button.",
+        "confidence": 0.53,
+        "supporting_evidence": [
+          {
+            "bug_id": "590",
+            "title": "Browsing Google books and browser back button",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2485,
+            "summary": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or..."
+          },
+          {
+            "bug_id": "19",
+            "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2461,
+            "summary": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browsers where you have tes..."
+          },
+          {
+            "bug_id": "542",
+            "title": "zooming problem in <div> and <p>",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2091,
+            "summary": "zooming problem in <div> and <p> product version 0214927urls if applicable httpwwwyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat st..."
+          }
+        ],
+        "reasoning": "The submitted report is semantically close to historical bug records."
+      },
+      "duplicate_matches": [],
+      "remediation": {
+        "recommendation": "Investigate the Authentication code path highlighted by the root cause hypothesis: The most probable root cause resembles historical defect 590: Browsing Google books and browser back button..",
+        "confidence": 0.4,
+        "action_items": [
+          "Reproduce the defect in the Authentication flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "Authentication fails after entering valid credentials.\r\nThe login API returns HTTP 401 unexpectedly.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "590-0",
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2485,
+          "text": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problem1 chose any book from booksgooglecom2 scroll a couple of pages down to cause the link in the address bar to change by adding an anchor with the page number3 hit the browser back buttonwhat is the expected resultusing anchors i believe the back button should either jump back to the correct page since the page number actually changes in the address bar or the browser should take the user to the previous webpage in the history as ie 7 and ff"
+        },
+        {
+          "chunk_id": "19-0",
+          "bug_id": "19",
+          "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2461,
+          "text": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 configure the browser to use a proxy i use squid 27stable 2 withauthentication enabled2 chrome will prompt for a username and password to auth with the proxy3 browsing continues normally for the sessionwhat is the expected resultintegrated authentication in the browser would use the current users logoncredentials to authenticate with the proxy serverwhat happens insteadchrome will prompt for a username and password to auth with the proxy entering the credentials manually allow the"
+        },
+        {
+          "chunk_id": "542-0",
+          "bug_id": "542",
+          "title": "zooming problem in <div> and <p>",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2091,
+          "text": "zooming problem in <div> and <p> product version 0214927urls if applicable httpwwwyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 goto wwwyotubecom2 press ctrl crontrol plus add sign to zoom on the page 3 after 3 to 5 zoom the layout fails and elements are not in the right placewhat is the expected resultzooming should not change the layout of web page as in mozilla firefox or ie7what happens insteadthe look of website would change after zooming General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "375-0",
+          "bug_id": "375",
+          "title": "gmail checkbox disappears",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2085,
+          "text": "gmail checkbox disappears product version 0214927urls if applicable httpmailgooglecommailshva1inboxother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problemafter leaving the gmail inbox open for some time without viewing the tab i came back to find the checkboxes to the left of each message had disappeared both clicking on the gmail icon and using f5 to refresh had no effect moving the mouse over the area the checkbox should have drawn did reveal the outline of a checkbox but it could not be selected opening a new tab to gmail resolved the issue i was able to open messages normally General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "294-1",
+          "bug_id": "294",
+          "title": "Drag & drop not supported in XStandard plug-in and in plug-in area that holds a video",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2066,
+          "text": "location5 drag a gif or jpeg image from the desktop or another location on the hard drive into the plugin the plugin should upload the image to the server and display itwhat is the expected resultdrag drop should workwhat happens insteaddrag drop does not workplease provide any additional information below attach a screenshot if possiblewe are the developers of xstandard plugin General Unknown Unknown Unknown Open"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:48:16.718724",
+    "report": "Authentication fails after entering valid credentials.\r\nThe login API returns HTTP 401 unexpectedly.",
+    "analysis": {
+      "triage": {
+        "severity": "Low",
+        "priority": "P3",
+        "component": "Authentication",
+        "confidence": 0.7,
+        "reasoning": "Minor issue."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause resembles historical defect 590: Browsing Google books and browser back button.",
+        "confidence": 0.53,
+        "supporting_evidence": [
+          {
+            "bug_id": "590",
+            "title": "Browsing Google books and browser back button",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2485,
+            "summary": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or..."
+          },
+          {
+            "bug_id": "19",
+            "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2461,
+            "summary": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browsers where you have tes..."
+          },
+          {
+            "bug_id": "542",
+            "title": "zooming problem in <div> and <p>",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.2091,
+            "summary": "zooming problem in <div> and <p> product version 0214927urls if applicable httpwwwyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat st..."
+          }
+        ],
+        "reasoning": "The submitted report is semantically close to historical bug records."
+      },
+      "duplicate_matches": [],
+      "remediation": {
+        "recommendation": "Investigate the Authentication code path highlighted by the root cause hypothesis: The most probable root cause resembles historical defect 590: Browsing Google books and browser back button..",
+        "confidence": 0.4,
+        "action_items": [
+          "Reproduce the defect in the Authentication flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "Authentication fails after entering valid credentials.\r\nThe login API returns HTTP 401 unexpectedly.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "590-0",
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2485,
+          "text": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problem1 chose any book from booksgooglecom2 scroll a couple of pages down to cause the link in the address bar to change by adding an anchor with the page number3 hit the browser back buttonwhat is the expected resultusing anchors i believe the back button should either jump back to the correct page since the page number actually changes in the address bar or the browser should take the user to the previous webpage in the history as ie 7 and ff"
+        },
+        {
+          "chunk_id": "19-0",
+          "bug_id": "19",
+          "title": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support)",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2461,
+          "text": "Automatic integrated windows authentication (aka automatic NTLM / Negotiate Auth support) product version 0214927urls if applicable other browsers tested ie 55 6 7add ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 configure the browser to use a proxy i use squid 27stable 2 withauthentication enabled2 chrome will prompt for a username and password to auth with the proxy3 browsing continues normally for the sessionwhat is the expected resultintegrated authentication in the browser would use the current users logoncredentials to authenticate with the proxy serverwhat happens insteadchrome will prompt for a username and password to auth with the proxy entering the credentials manually allow the"
+        },
+        {
+          "chunk_id": "542-0",
+          "bug_id": "542",
+          "title": "zooming problem in <div> and <p>",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2091,
+          "text": "zooming problem in <div> and <p> product version 0214927urls if applicable httpwwwyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 ok ie 7 okwhat steps will reproduce the problem1 goto wwwyotubecom2 press ctrl crontrol plus add sign to zoom on the page 3 after 3 to 5 zoom the layout fails and elements are not in the right placewhat is the expected resultzooming should not change the layout of web page as in mozilla firefox or ie7what happens insteadthe look of website would change after zooming General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "375-0",
+          "bug_id": "375",
+          "title": "gmail checkbox disappears",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2085,
+          "text": "gmail checkbox disappears product version 0214927urls if applicable httpmailgooglecommailshva1inboxother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problemafter leaving the gmail inbox open for some time without viewing the tab i came back to find the checkboxes to the left of each message had disappeared both clicking on the gmail icon and using f5 to refresh had no effect moving the mouse over the area the checkbox should have drawn did reveal the outline of a checkbox but it could not be selected opening a new tab to gmail resolved the issue i was able to open messages normally General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "294-1",
+          "bug_id": "294",
+          "title": "Drag & drop not supported in XStandard plug-in and in plug-in area that holds a video",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.2066,
+          "text": "location5 drag a gif or jpeg image from the desktop or another location on the hard drive into the plugin the plugin should upload the image to the server and display itwhat is the expected resultdrag drop should workwhat happens insteaddrag drop does not workplease provide any additional information below attach a screenshot if possiblewe are the developers of xstandard plugin General Unknown Unknown Unknown Open"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:49:37.371269",
+    "report": "The payment API fails intermittently and returns HTTP 500 Internal Server Error.\r\nThe failure occurs while processing a valid payment request.",
+    "analysis": {
+      "triage": {
+        "severity": "Medium",
+        "priority": "P2",
+        "component": "General",
+        "confidence": 0.85,
+        "reasoning": "General error detected."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause resembles historical defect 286: google ads and other javascript does not display at all or distorted in the wrong location.",
+        "confidence": 0.57,
+        "supporting_evidence": [
+          {
+            "bug_id": "286",
+            "title": "google ads and other javascript does not display at all or distorted in the wrong location",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.3553,
+            "summary": "google ads and other javascript does not display at all or distorted in the wrong location product version see aboutversionurls if applicable httpwwwwiscollectorcarcomother browsers tested ie ff safariadd ok or fail a..."
+          },
+          {
+            "bug_id": "294",
+            "title": "Drag & drop not supported in XStandard plug-in and in plug-in area that holds a video",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.3504,
+            "summary": "location5 drag a gif or jpeg image from the desktop or another location on the hard drive into the plugin the plugin should upload the image to the server and display itwhat is the expected resultdrag drop should work..."
+          },
+          {
+            "bug_id": "214",
+            "title": "URL",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.3292,
+            "summary": "URL awesome workkeep it upramya r i love googleproduct version see aboutversionurls if applicable httpwwwgooglecoother browsers tested iefirefoxadd ok or fail after other browsers where you have tested this issue safa..."
+          }
+        ],
+        "reasoning": "The submitted report is semantically close to historical bug records."
+      },
+      "duplicate_matches": [
+        {
+          "bug_id": "286",
+          "title": "google ads and other javascript does not display at all or distorted in the wrong location",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.3553,
+          "summary": "google ads and other javascript does not display at all or distorted in the wrong location product version see aboutversionurls if applicable httpwwwwiscollectorcarcomother browsers tested ie ff sa...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        },
+        {
+          "bug_id": "294",
+          "title": "Drag & drop not supported in XStandard plug-in and in plug-in area that holds a video",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.3504,
+          "summary": "location5 drag a gif or jpeg image from the desktop or another location on the hard drive into the plugin the plugin should upload the image to the server and display itwhat is the expected resultd...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        }
+      ],
+      "remediation": {
+        "recommendation": "Investigate the General code path highlighted by the root cause hypothesis: The most probable root cause resembles historical defect 286: google ads and other javascript does not display at all or distorted in the wrong location..",
+        "confidence": 0.5,
+        "action_items": [
+          "Reproduce the defect in the General flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code.",
+          "Compare against historical bug 286 before implementing a new fix."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "The payment API fails intermittently and returns HTTP 500 Internal Server Error.\r\nThe failure occurs while processing a valid payment request.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "286-0",
+          "bug_id": "286",
+          "title": "google ads and other javascript does not display at all or distorted in the wrong location",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3553,
+          "text": "google ads and other javascript does not display at all or distorted in the wrong location product version see aboutversionurls if applicable httpwwwwiscollectorcarcomother browsers tested ie ff safariadd ok or fail after other browsers where you have tested this issue safari 3 fail firefox 3 ok ie 7 okwhat steps will reproduce the problem1 go to the site notice the sponsored links on the left below should bea 120x600 google ad it may appear as a part of the ad in the center page23what is the expected resultgoogle ad should be displayedwhat happens insteadinstead the area is blank and sometimes a small portion of the ad isdisplayed in the middle of the pageplease provide any additional information below attach a"
+        },
+        {
+          "chunk_id": "294-1",
+          "bug_id": "294",
+          "title": "Drag & drop not supported in XStandard plug-in and in plug-in area that holds a video",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3504,
+          "text": "location5 drag a gif or jpeg image from the desktop or another location on the hard drive into the plugin the plugin should upload the image to the server and display itwhat is the expected resultdrag drop should workwhat happens insteaddrag drop does not workplease provide any additional information below attach a screenshot if possiblewe are the developers of xstandard plugin General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "214-0",
+          "bug_id": "214",
+          "title": "URL",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3292,
+          "text": "URL awesome workkeep it upramya r i love googleproduct version see aboutversionurls if applicable httpwwwgooglecoother browsers tested iefirefoxadd ok or fail after other browsers where you have tested this issue safari 3 not tested firefox 3 ok ie 7 okwhat steps will reproduce the problem1 type httpwwwgoogleco and enter2 it doesnt display anything3 shows waiting for cache at the bottom and shows the page loading at the top4 the other browsers display page cannot be displayed ie address not found firefoxwhat is the expected resultthe browser could not find the host server for the provided addresswhat happens insteadshows the page loading sign and keeps processing the pageplease provide any additional information below attach a screenshot if possiblewith save page option"
+        },
+        {
+          "chunk_id": "72-1",
+          "bug_id": "72",
+          "title": "Selecting entire lines instead of the actual text string on double click",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3267,
+          "text": "the white space after the end of the text and as in case some of the text are marked unreadable by the markingplease provide any additional information below attach a screenshot if possible General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "590-0",
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3246,
+          "text": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problem1 chose any book from booksgooglecom2 scroll a couple of pages down to cause the link in the address bar to change by adding an anchor with the page number3 hit the browser back buttonwhat is the expected resultusing anchors i believe the back button should either jump back to the correct page since the page number actually changes in the address bar or the browser should take the user to the previous webpage in the history as ie 7 and ff"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:49:58.299681",
+    "report": "The payment API fails intermittently and returns HTTP 500 Internal Server Error.\r\nThe failure occurs while processing a valid payment request.",
+    "analysis": {
+      "triage": {
+        "severity": "Medium",
+        "priority": "P2",
+        "component": "General",
+        "confidence": 0.85,
+        "reasoning": "General error detected."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause resembles historical defect 286: google ads and other javascript does not display at all or distorted in the wrong location.",
+        "confidence": 0.57,
+        "supporting_evidence": [
+          {
+            "bug_id": "286",
+            "title": "google ads and other javascript does not display at all or distorted in the wrong location",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.3553,
+            "summary": "google ads and other javascript does not display at all or distorted in the wrong location product version see aboutversionurls if applicable httpwwwwiscollectorcarcomother browsers tested ie ff safariadd ok or fail a..."
+          },
+          {
+            "bug_id": "294",
+            "title": "Drag & drop not supported in XStandard plug-in and in plug-in area that holds a video",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.3504,
+            "summary": "location5 drag a gif or jpeg image from the desktop or another location on the hard drive into the plugin the plugin should upload the image to the server and display itwhat is the expected resultdrag drop should work..."
+          },
+          {
+            "bug_id": "214",
+            "title": "URL",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.3292,
+            "summary": "URL awesome workkeep it upramya r i love googleproduct version see aboutversionurls if applicable httpwwwgooglecoother browsers tested iefirefoxadd ok or fail after other browsers where you have tested this issue safa..."
+          }
+        ],
+        "reasoning": "The submitted report is semantically close to historical bug records."
+      },
+      "duplicate_matches": [
+        {
+          "bug_id": "286",
+          "title": "google ads and other javascript does not display at all or distorted in the wrong location",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.3553,
+          "summary": "google ads and other javascript does not display at all or distorted in the wrong location product version see aboutversionurls if applicable httpwwwwiscollectorcarcomother browsers tested ie ff sa...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        },
+        {
+          "bug_id": "294",
+          "title": "Drag & drop not supported in XStandard plug-in and in plug-in area that holds a video",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.3504,
+          "summary": "location5 drag a gif or jpeg image from the desktop or another location on the hard drive into the plugin the plugin should upload the image to the server and display itwhat is the expected resultd...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        }
+      ],
+      "remediation": {
+        "recommendation": "Investigate the General code path highlighted by the root cause hypothesis: The most probable root cause resembles historical defect 286: google ads and other javascript does not display at all or distorted in the wrong location..",
+        "confidence": 0.5,
+        "action_items": [
+          "Reproduce the defect in the General flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code.",
+          "Compare against historical bug 286 before implementing a new fix."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "The payment API fails intermittently and returns HTTP 500 Internal Server Error.\r\nThe failure occurs while processing a valid payment request.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "286-0",
+          "bug_id": "286",
+          "title": "google ads and other javascript does not display at all or distorted in the wrong location",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3553,
+          "text": "google ads and other javascript does not display at all or distorted in the wrong location product version see aboutversionurls if applicable httpwwwwiscollectorcarcomother browsers tested ie ff safariadd ok or fail after other browsers where you have tested this issue safari 3 fail firefox 3 ok ie 7 okwhat steps will reproduce the problem1 go to the site notice the sponsored links on the left below should bea 120x600 google ad it may appear as a part of the ad in the center page23what is the expected resultgoogle ad should be displayedwhat happens insteadinstead the area is blank and sometimes a small portion of the ad isdisplayed in the middle of the pageplease provide any additional information below attach a"
+        },
+        {
+          "chunk_id": "294-1",
+          "bug_id": "294",
+          "title": "Drag & drop not supported in XStandard plug-in and in plug-in area that holds a video",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3504,
+          "text": "location5 drag a gif or jpeg image from the desktop or another location on the hard drive into the plugin the plugin should upload the image to the server and display itwhat is the expected resultdrag drop should workwhat happens insteaddrag drop does not workplease provide any additional information below attach a screenshot if possiblewe are the developers of xstandard plugin General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "214-0",
+          "bug_id": "214",
+          "title": "URL",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3292,
+          "text": "URL awesome workkeep it upramya r i love googleproduct version see aboutversionurls if applicable httpwwwgooglecoother browsers tested iefirefoxadd ok or fail after other browsers where you have tested this issue safari 3 not tested firefox 3 ok ie 7 okwhat steps will reproduce the problem1 type httpwwwgoogleco and enter2 it doesnt display anything3 shows waiting for cache at the bottom and shows the page loading at the top4 the other browsers display page cannot be displayed ie address not found firefoxwhat is the expected resultthe browser could not find the host server for the provided addresswhat happens insteadshows the page loading sign and keeps processing the pageplease provide any additional information below attach a screenshot if possiblewith save page option"
+        },
+        {
+          "chunk_id": "72-1",
+          "bug_id": "72",
+          "title": "Selecting entire lines instead of the actual text string on double click",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3267,
+          "text": "the white space after the end of the text and as in case some of the text are marked unreadable by the markingplease provide any additional information below attach a screenshot if possible General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "590-0",
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3246,
+          "text": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problem1 chose any book from booksgooglecom2 scroll a couple of pages down to cause the link in the address bar to change by adding an anchor with the page number3 hit the browser back buttonwhat is the expected resultusing anchors i believe the back button should either jump back to the correct page since the page number actually changes in the address bar or the browser should take the user to the previous webpage in the history as ie 7 and ff"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:54:05.844402",
+    "report": "The payment API fails intermittently and returns HTTP 500 Internal Server Error. The failure occurs while processing a valid payment request.",
+    "analysis": {
+      "triage": {
+        "severity": "Medium",
+        "priority": "P2",
+        "component": "General",
+        "confidence": 0.85,
+        "reasoning": "General error detected."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause resembles historical defect 286: google ads and other javascript does not display at all or distorted in the wrong location.",
+        "confidence": 0.57,
+        "supporting_evidence": [
+          {
+            "bug_id": "286",
+            "title": "google ads and other javascript does not display at all or distorted in the wrong location",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.3553,
+            "summary": "google ads and other javascript does not display at all or distorted in the wrong location product version see aboutversionurls if applicable httpwwwwiscollectorcarcomother browsers tested ie ff safariadd ok or fail a..."
+          },
+          {
+            "bug_id": "294",
+            "title": "Drag & drop not supported in XStandard plug-in and in plug-in area that holds a video",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.3504,
+            "summary": "location5 drag a gif or jpeg image from the desktop or another location on the hard drive into the plugin the plugin should upload the image to the server and display itwhat is the expected resultdrag drop should work..."
+          },
+          {
+            "bug_id": "214",
+            "title": "URL",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.3292,
+            "summary": "URL awesome workkeep it upramya r i love googleproduct version see aboutversionurls if applicable httpwwwgooglecoother browsers tested iefirefoxadd ok or fail after other browsers where you have tested this issue safa..."
+          }
+        ],
+        "reasoning": "The submitted report is semantically close to historical bug records."
+      },
+      "duplicate_matches": [
+        {
+          "bug_id": "286",
+          "title": "google ads and other javascript does not display at all or distorted in the wrong location",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.3553,
+          "summary": "google ads and other javascript does not display at all or distorted in the wrong location product version see aboutversionurls if applicable httpwwwwiscollectorcarcomother browsers tested ie ff sa...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        },
+        {
+          "bug_id": "294",
+          "title": "Drag & drop not supported in XStandard plug-in and in plug-in area that holds a video",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.3504,
+          "summary": "location5 drag a gif or jpeg image from the desktop or another location on the hard drive into the plugin the plugin should upload the image to the server and display itwhat is the expected resultd...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        }
+      ],
+      "remediation": {
+        "recommendation": "Investigate the General code path highlighted by the root cause hypothesis: The most probable root cause resembles historical defect 286: google ads and other javascript does not display at all or distorted in the wrong location..",
+        "confidence": 0.5,
+        "action_items": [
+          "Reproduce the defect in the General flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code.",
+          "Compare against historical bug 286 before implementing a new fix."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "The payment API fails intermittently and returns HTTP 500 Internal Server Error. The failure occurs while processing a valid payment request.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "286-0",
+          "bug_id": "286",
+          "title": "google ads and other javascript does not display at all or distorted in the wrong location",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3553,
+          "text": "google ads and other javascript does not display at all or distorted in the wrong location product version see aboutversionurls if applicable httpwwwwiscollectorcarcomother browsers tested ie ff safariadd ok or fail after other browsers where you have tested this issue safari 3 fail firefox 3 ok ie 7 okwhat steps will reproduce the problem1 go to the site notice the sponsored links on the left below should bea 120x600 google ad it may appear as a part of the ad in the center page23what is the expected resultgoogle ad should be displayedwhat happens insteadinstead the area is blank and sometimes a small portion of the ad isdisplayed in the middle of the pageplease provide any additional information below attach a"
+        },
+        {
+          "chunk_id": "294-1",
+          "bug_id": "294",
+          "title": "Drag & drop not supported in XStandard plug-in and in plug-in area that holds a video",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3504,
+          "text": "location5 drag a gif or jpeg image from the desktop or another location on the hard drive into the plugin the plugin should upload the image to the server and display itwhat is the expected resultdrag drop should workwhat happens insteaddrag drop does not workplease provide any additional information below attach a screenshot if possiblewe are the developers of xstandard plugin General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "214-0",
+          "bug_id": "214",
+          "title": "URL",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3292,
+          "text": "URL awesome workkeep it upramya r i love googleproduct version see aboutversionurls if applicable httpwwwgooglecoother browsers tested iefirefoxadd ok or fail after other browsers where you have tested this issue safari 3 not tested firefox 3 ok ie 7 okwhat steps will reproduce the problem1 type httpwwwgoogleco and enter2 it doesnt display anything3 shows waiting for cache at the bottom and shows the page loading at the top4 the other browsers display page cannot be displayed ie address not found firefoxwhat is the expected resultthe browser could not find the host server for the provided addresswhat happens insteadshows the page loading sign and keeps processing the pageplease provide any additional information below attach a screenshot if possiblewith save page option"
+        },
+        {
+          "chunk_id": "72-1",
+          "bug_id": "72",
+          "title": "Selecting entire lines instead of the actual text string on double click",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3267,
+          "text": "the white space after the end of the text and as in case some of the text are marked unreadable by the markingplease provide any additional information below attach a screenshot if possible General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "590-0",
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.3246,
+          "text": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problem1 chose any book from booksgooglecom2 scroll a couple of pages down to cause the link in the address bar to change by adding an anchor with the page number3 hit the browser back buttonwhat is the expected resultusing anchors i believe the back button should either jump back to the correct page since the page number actually changes in the address bar or the browser should take the user to the previous webpage in the history as ie 7 and ff"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:56:03.364639",
+    "report": "The dashboard page does not render correctly.\r\nThe page becomes blank after clicking the Settings button.\r\nThe UI stops responding and the expected dashboard components are not displayed.",
+    "analysis": {
+      "triage": {
+        "severity": "Low",
+        "priority": "P3",
+        "component": "User Interface",
+        "confidence": 0.7,
+        "reasoning": "Minor issue."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause resembles historical defect 362: Unrelated tooltips in tab area.",
+        "confidence": 0.65,
+        "supporting_evidence": [
+          {
+            "bug_id": "362",
+            "title": "Unrelated tooltips in tab area",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.6008,
+            "summary": "Unrelated tooltips in tab area product version 0214927urls if applicable other browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3firefox 3ie 7what steps will reproduce the prob..."
+          },
+          {
+            "bug_id": "214",
+            "title": "URL",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.5819,
+            "summary": "URL awesome workkeep it upramya r i love googleproduct version see aboutversionurls if applicable httpwwwgooglecoother browsers tested iefirefoxadd ok or fail after other browsers where you have tested this issue safa..."
+          },
+          {
+            "bug_id": "590",
+            "title": "Browsing Google books and browser back button",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.5666,
+            "summary": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or..."
+          }
+        ],
+        "reasoning": "The submitted report is semantically close to historical bug records."
+      },
+      "duplicate_matches": [
+        {
+          "bug_id": "362",
+          "title": "Unrelated tooltips in tab area",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.6008,
+          "summary": "Unrelated tooltips in tab area product version 0214927urls if applicable other browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3firefox 3ie 7what steps wil...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        },
+        {
+          "bug_id": "214",
+          "title": "URL",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.5819,
+          "summary": "URL awesome workkeep it upramya r i love googleproduct version see aboutversionurls if applicable httpwwwgooglecoother browsers tested iefirefoxadd ok or fail after other browsers where you have te...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        },
+        {
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.5666,
+          "summary": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother brows...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        },
+        {
+          "bug_id": "286",
+          "title": "google ads and other javascript does not display at all or distorted in the wrong location",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.5591,
+          "summary": "google ads and other javascript does not display at all or distorted in the wrong location product version see aboutversionurls if applicable httpwwwwiscollectorcarcomother browsers tested ie ff sa...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        },
+        {
+          "bug_id": "72",
+          "title": "Selecting entire lines instead of the actual text string on double click",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.5559,
+          "summary": "Selecting entire lines instead of the actual text string on double click product version 0214927 1583urls if applicable multiple sites httpfacebookcom httpyoutubecomother browsers testedadd ok or f...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        }
+      ],
+      "remediation": {
+        "recommendation": "Investigate the User Interface code path highlighted by the root cause hypothesis: The most probable root cause resembles historical defect 362: Unrelated tooltips in tab area..",
+        "confidence": 0.61,
+        "action_items": [
+          "Reproduce the defect in the User Interface flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code.",
+          "Compare against historical bug 362 before implementing a new fix."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "The dashboard page does not render correctly.\r\nThe page becomes blank after clicking the Settings button.\r\nThe UI stops responding and the expected dashboard components are not displayed.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "362-0",
+          "bug_id": "362",
+          "title": "Unrelated tooltips in tab area",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.6008,
+          "text": "Unrelated tooltips in tab area product version 0214927urls if applicable other browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3firefox 3ie 7what steps will reproduce the problem1 close most of the tabs or open a new window to make the problem more visible2 hover the mouse over the tab area but not over any button or tabwhat is the expected resultnothing should happenwhat happens insteadon the right the tooltip for the go page and wrench buttons appearstowards the middle and left side the tooltips for the bookmarks are displayed General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "214-0",
+          "bug_id": "214",
+          "title": "URL",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.5819,
+          "text": "URL awesome workkeep it upramya r i love googleproduct version see aboutversionurls if applicable httpwwwgooglecoother browsers tested iefirefoxadd ok or fail after other browsers where you have tested this issue safari 3 not tested firefox 3 ok ie 7 okwhat steps will reproduce the problem1 type httpwwwgoogleco and enter2 it doesnt display anything3 shows waiting for cache at the bottom and shows the page loading at the top4 the other browsers display page cannot be displayed ie address not found firefoxwhat is the expected resultthe browser could not find the host server for the provided addresswhat happens insteadshows the page loading sign and keeps processing the pageplease provide any additional information below attach a screenshot if possiblewith save page option"
+        },
+        {
+          "chunk_id": "590-0",
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.5666,
+          "text": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problem1 chose any book from booksgooglecom2 scroll a couple of pages down to cause the link in the address bar to change by adding an anchor with the page number3 hit the browser back buttonwhat is the expected resultusing anchors i believe the back button should either jump back to the correct page since the page number actually changes in the address bar or the browser should take the user to the previous webpage in the history as ie 7 and ff"
+        },
+        {
+          "chunk_id": "286-0",
+          "bug_id": "286",
+          "title": "google ads and other javascript does not display at all or distorted in the wrong location",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.5591,
+          "text": "google ads and other javascript does not display at all or distorted in the wrong location product version see aboutversionurls if applicable httpwwwwiscollectorcarcomother browsers tested ie ff safariadd ok or fail after other browsers where you have tested this issue safari 3 fail firefox 3 ok ie 7 okwhat steps will reproduce the problem1 go to the site notice the sponsored links on the left below should bea 120x600 google ad it may appear as a part of the ad in the center page23what is the expected resultgoogle ad should be displayedwhat happens insteadinstead the area is blank and sometimes a small portion of the ad isdisplayed in the middle of the pageplease provide any additional information below attach a"
+        },
+        {
+          "chunk_id": "72-0",
+          "bug_id": "72",
+          "title": "Selecting entire lines instead of the actual text string on double click",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.5559,
+          "text": "Selecting entire lines instead of the actual text string on double click product version 0214927 1583urls if applicable multiple sites httpfacebookcom httpyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issue safari 3 na firefox 3 ok ie 7 okwhat steps will reproduce the problem1 select a singlemultiline text with double clickwhat is the expected resultthe double click should only mark the area actually containing text not the white space around itwhat happens insteadsingle line the text is marked incl the white space after the end of the textmulti line the text is marked incl the white space after the end of the text and as in case some of the text are marked unreadable"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-10T00:56:05.789648",
+    "report": "The dashboard page does not render correctly.\r\nThe page becomes blank after clicking the Settings button.\r\nThe UI stops responding and the expected dashboard components are not displayed.",
+    "analysis": {
+      "triage": {
+        "severity": "Low",
+        "priority": "P3",
+        "component": "User Interface",
+        "confidence": 0.7,
+        "reasoning": "Minor issue."
+      },
+      "log_analysis": {
+        "exception_type": "Unknown",
+        "failure_point": "Unknown",
+        "affected_code_path": "Unknown",
+        "confidence": 0.6,
+        "reasoning": "No recognizable exception found."
+      },
+      "root_cause": {
+        "hypothesis": "The most probable root cause resembles historical defect 362: Unrelated tooltips in tab area.",
+        "confidence": 0.65,
+        "supporting_evidence": [
+          {
+            "bug_id": "362",
+            "title": "Unrelated tooltips in tab area",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.6008,
+            "summary": "Unrelated tooltips in tab area product version 0214927urls if applicable other browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3firefox 3ie 7what steps will reproduce the prob..."
+          },
+          {
+            "bug_id": "214",
+            "title": "URL",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.5819,
+            "summary": "URL awesome workkeep it upramya r i love googleproduct version see aboutversionurls if applicable httpwwwgooglecoother browsers tested iefirefoxadd ok or fail after other browsers where you have tested this issue safa..."
+          },
+          {
+            "bug_id": "590",
+            "title": "Browsing Google books and browser back button",
+            "component": "General",
+            "resolution": "Unknown",
+            "similarity": 0.5666,
+            "summary": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or..."
+          }
+        ],
+        "reasoning": "The submitted report is semantically close to historical bug records."
+      },
+      "duplicate_matches": [
+        {
+          "bug_id": "362",
+          "title": "Unrelated tooltips in tab area",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.6008,
+          "summary": "Unrelated tooltips in tab area product version 0214927urls if applicable other browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3firefox 3ie 7what steps wil...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        },
+        {
+          "bug_id": "214",
+          "title": "URL",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.5819,
+          "summary": "URL awesome workkeep it upramya r i love googleproduct version see aboutversionurls if applicable httpwwwgooglecoother browsers tested iefirefoxadd ok or fail after other browsers where you have te...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        },
+        {
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.5666,
+          "summary": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother brows...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        },
+        {
+          "bug_id": "286",
+          "title": "google ads and other javascript does not display at all or distorted in the wrong location",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.5591,
+          "summary": "google ads and other javascript does not display at all or distorted in the wrong location product version see aboutversionurls if applicable httpwwwwiscollectorcarcomother browsers tested ie ff sa...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        },
+        {
+          "bug_id": "72",
+          "title": "Selecting entire lines instead of the actual text string on double click",
+          "component": "General",
+          "status": "Open",
+          "resolution": "Unknown",
+          "similarity": 0.5559,
+          "summary": "Selecting entire lines instead of the actual text string on double click product version 0214927 1583urls if applicable multiple sites httpfacebookcom httpyoutubecomother browsers testedadd ok or f...",
+          "resolution_summary": "Historical status: Open. Review this issue before creating a new fix path."
+        }
+      ],
+      "remediation": {
+        "recommendation": "Investigate the User Interface code path highlighted by the root cause hypothesis: The most probable root cause resembles historical defect 362: Unrelated tooltips in tab area..",
+        "confidence": 0.61,
+        "action_items": [
+          "Reproduce the defect in the User Interface flow using the submitted steps and logs.",
+          "Add a regression test that captures the failing path before changing production code.",
+          "Compare against historical bug 362 before implementing a new fix."
+        ],
+        "best_practices": [
+          "Keep the fix narrow and close to the failing component boundary.",
+          "Validate uploaded/user-provided input before processing it.",
+          "Log the failure context without exposing secrets or personal data.",
+          "Link the regression test to the historical duplicate or root-cause evidence."
+        ]
+      },
+      "query_summary": "The dashboard page does not render correctly.\r\nThe page becomes blank after clicking the Settings button.\r\nThe UI stops responding and the expected dashboard components are not displayed.",
+      "top_k": 5,
+      "matches": [
+        {
+          "chunk_id": "362-0",
+          "bug_id": "362",
+          "title": "Unrelated tooltips in tab area",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.6008,
+          "text": "Unrelated tooltips in tab area product version 0214927urls if applicable other browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3firefox 3ie 7what steps will reproduce the problem1 close most of the tabs or open a new window to make the problem more visible2 hover the mouse over the tab area but not over any button or tabwhat is the expected resultnothing should happenwhat happens insteadon the right the tooltip for the go page and wrench buttons appearstowards the middle and left side the tooltips for the bookmarks are displayed General Unknown Unknown Unknown Open"
+        },
+        {
+          "chunk_id": "214-0",
+          "bug_id": "214",
+          "title": "URL",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.5819,
+          "text": "URL awesome workkeep it upramya r i love googleproduct version see aboutversionurls if applicable httpwwwgooglecoother browsers tested iefirefoxadd ok or fail after other browsers where you have tested this issue safari 3 not tested firefox 3 ok ie 7 okwhat steps will reproduce the problem1 type httpwwwgoogleco and enter2 it doesnt display anything3 shows waiting for cache at the bottom and shows the page loading at the top4 the other browsers display page cannot be displayed ie address not found firefoxwhat is the expected resultthe browser could not find the host server for the provided addresswhat happens insteadshows the page loading sign and keeps processing the pageplease provide any additional information below attach a screenshot if possiblewith save page option"
+        },
+        {
+          "chunk_id": "590-0",
+          "bug_id": "590",
+          "title": "Browsing Google books and browser back button",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.5666,
+          "text": "Browsing Google books and browser back button product version 0214927 build 1583urls if applicable httpbooksgooglecombooksidhrzddtnl7l0cpgpp1dqgooglesigacfu3u1lazosoqte5ul9lt76chewmsmkdwother browsers testedadd ok or fail after other browsers where you have tested this issuesafari 3 firefox 3 okie 7what steps will reproduce the problem1 chose any book from booksgooglecom2 scroll a couple of pages down to cause the link in the address bar to change by adding an anchor with the page number3 hit the browser back buttonwhat is the expected resultusing anchors i believe the back button should either jump back to the correct page since the page number actually changes in the address bar or the browser should take the user to the previous webpage in the history as ie 7 and ff"
+        },
+        {
+          "chunk_id": "286-0",
+          "bug_id": "286",
+          "title": "google ads and other javascript does not display at all or distorted in the wrong location",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.5591,
+          "text": "google ads and other javascript does not display at all or distorted in the wrong location product version see aboutversionurls if applicable httpwwwwiscollectorcarcomother browsers tested ie ff safariadd ok or fail after other browsers where you have tested this issue safari 3 fail firefox 3 ok ie 7 okwhat steps will reproduce the problem1 go to the site notice the sponsored links on the left below should bea 120x600 google ad it may appear as a part of the ad in the center page23what is the expected resultgoogle ad should be displayedwhat happens insteadinstead the area is blank and sometimes a small portion of the ad isdisplayed in the middle of the pageplease provide any additional information below attach a"
+        },
+        {
+          "chunk_id": "72-0",
+          "bug_id": "72",
+          "title": "Selecting entire lines instead of the actual text string on double click",
+          "component": "General",
+          "severity": "Unknown",
+          "priority": "Unknown",
+          "status": "Open",
+          "resolution": "Unknown",
+          "score": 0.5559,
+          "text": "Selecting entire lines instead of the actual text string on double click product version 0214927 1583urls if applicable multiple sites httpfacebookcom httpyoutubecomother browsers testedadd ok or fail after other browsers where you have tested this issue safari 3 na firefox 3 ok ie 7 okwhat steps will reproduce the problem1 select a singlemultiline text with double clickwhat is the expected resultthe double click should only mark the area actually containing text not the white space around itwhat happens insteadsingle line the text is marked incl the white space after the end of the textmulti line the text is marked incl the white space after the end of the text and as in case some of the text are marked unreadable"
+        }
+      ]
+    }
+  }
+]

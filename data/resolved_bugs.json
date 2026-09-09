@@ -1,0 +1,15 @@
+[
+  {
+    "timestamp": "2026-09-10T00:24:24.715245",
+    "bug_id": "M4-001",
+    "title": "Database connection timeout during login",
+    "description": "Users cannot login because the application fails to establish a database connection.",
+    "component": "Authentication",
+    "severity": "High",
+    "priority": "P1",
+    "root_cause": "Database connection timeout caused by unavailable database service.",
+    "resolution": "Increased connection timeout, added connection retry handling, and verified database availability.",
+    "stack_trace": "DatabaseConnectionTimeout: connection timed out",
+    "status": "Resolved"
+  }
+]

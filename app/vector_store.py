@@ -69,13 +69,12 @@ class ChromaVectorStore:
     def add(self, chunks: list[BugChunk], embeddings: list[list[float]]) -> None:
         if not chunks:
             return
-        self.collection.add(
-            ids=[chunk.chunk_id for chunk in chunks],
-            documents=[chunk.text for chunk in chunks],
-            metadatas=[chunk.metadata for chunk in chunks],
-            embeddings=embeddings,
-        )
-
+        self.collection.upsert(
+    ids=[chunk.chunk_id for chunk in chunks],
+    documents=[chunk.text for chunk in chunks],
+    metadatas=[chunk.metadata for chunk in chunks],
+    embeddings=embeddings,
+)
     def query(self, embedding: list[float], top_k: int) -> list[SimilarBug]:
         result = self.collection.query(query_embeddings=[embedding], n_results=top_k)
         matches: list[SimilarBug] = []
