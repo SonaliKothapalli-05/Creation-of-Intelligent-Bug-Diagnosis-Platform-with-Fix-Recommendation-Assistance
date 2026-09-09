@@ -162,6 +162,123 @@ def generate_report(data):
     story.append(Spacer(1, 20))
 
     # ===========================
+    # ROOT CAUSE ANALYSIS
+    # ===========================
+
+    story.append(
+        Paragraph("<b><font size='16'>Root Cause Analysis</font></b>", styles["Heading2"])
+    )
+
+    story.append(Spacer(1, 8))
+
+    root_cause = data.get("root_cause", {})
+
+    root_table = Table(
+        [
+            ["Field", "Value"],
+            ["Hypothesis", root_cause.get("hypothesis", "-")],
+            ["Confidence", f"{round(root_cause.get('confidence', 0) * 100)}%"],
+            ["Reasoning", root_cause.get("reasoning", "-")],
+        ],
+        colWidths=[160, 320],
+    )
+
+    root_table.setStyle(
+        TableStyle(
+            [
+                ("BACKGROUND", (0, 0), (-1, 0), colors.darkblue),
+                ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+                ("BACKGROUND", (0, 1), (0, -1), colors.whitesmoke),
+                ("GRID", (0, 0), (-1, -1), 1, colors.grey),
+                ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+                ("VALIGN", (0, 0), (-1, -1), "TOP"),
+            ]
+        )
+    )
+
+    story.append(root_table)
+    story.append(Spacer(1, 10))
+
+    for item in root_cause.get("supporting_evidence", [])[:3]:
+        story.append(
+            Paragraph(
+                f"<b>Evidence Bug {item.get('bug_id', '-')}:</b> {item.get('title', '-')}",
+                styles["BodyText"],
+            )
+        )
+        story.append(
+            Paragraph(
+                f"Similarity: {round(item.get('similarity', 0) * 100)}% | Resolution: {item.get('resolution', '-')}",
+                styles["BodyText"],
+            )
+        )
+        story.append(Spacer(1, 6))
+
+    story.append(Spacer(1, 20))
+
+    # ===========================
+    # REMEDIATION
+    # ===========================
+
+    story.append(
+        Paragraph("<b><font size='16'>Recommended Fix</font></b>", styles["Heading2"])
+    )
+
+    story.append(Spacer(1, 8))
+
+    remediation = data.get("remediation", {})
+
+    story.append(
+        Paragraph(
+            f"<b>Recommendation:</b> {remediation.get('recommendation', '-')}",
+            styles["BodyText"],
+        )
+    )
+    story.append(
+        Paragraph(
+            f"<b>Confidence:</b> {round(remediation.get('confidence', 0) * 100)}%",
+            styles["BodyText"],
+        )
+    )
+    story.append(Spacer(1, 8))
+
+    for item in remediation.get("action_items", []):
+        story.append(Paragraph(f"- {item}", styles["BodyText"]))
+
+    story.append(Spacer(1, 20))
+
+    # ===========================
+    # DUPLICATES
+    # ===========================
+
+    story.append(
+        Paragraph("<b><font size='16'>Duplicate Detection</font></b>", styles["Heading2"])
+    )
+
+    duplicates = data.get("duplicate_matches", [])
+
+    if duplicates:
+        for item in duplicates[:5]:
+            story.append(
+                Paragraph(
+                    f"<b>Bug {item.get('bug_id', '-')}:</b> {item.get('title', '-')}",
+                    styles["BodyText"],
+                )
+            )
+            story.append(
+                Paragraph(
+                    f"Similarity: {round(item.get('similarity', 0) * 100)}% | {item.get('resolution_summary', '-')}",
+                    styles["BodyText"],
+                )
+            )
+            story.append(Spacer(1, 8))
+    else:
+        story.append(Paragraph("No likely duplicates found.", styles["BodyText"]))
+
+    story.append(Spacer(1, 20))
+
+    # ===========================
     # SIMILAR BUGS
     # ===========================
 

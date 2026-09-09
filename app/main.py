@@ -1,12 +1,9 @@
 from typing import Annotated
 from app.orchestrator import MultiAgentOrchestrator
-from app.orchestrator import MultiAgentOrchestrator
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
-from app.triage_agent import TriageAgent
-from app.log_agent import LogAnalysisAgent
 from app.config import DEFAULT_TOP_K, FRONTEND_DIR
 from app.rag import retrieve_similar_bugs
 from fastapi.responses import Response
@@ -65,14 +62,14 @@ async def analyze_bug(
             detail="Submit bug text or at least one file."
         )
 
-    # Run both agents through the orchestrator
-    analysis = orchestrator.analyze(combined)
-
     # Retrieve similar bugs
     retrieval = retrieve_similar_bugs(
         combined,
         top_k=max(1, min(top_k, 10))
     )
+
+    # Run analysis agents with historical evidence from RAG
+    analysis = orchestrator.analyze(combined, retrieval.matches)
 
     # Return combined response
     return {

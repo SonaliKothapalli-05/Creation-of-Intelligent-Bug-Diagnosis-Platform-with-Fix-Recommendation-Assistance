@@ -27,7 +27,7 @@
         <div class="pipeline-card" aria-label="Retrieval pipeline">
           <span class="card-label">Current index</span>
           <strong>500 historical bug reports indexed</strong>
-          <p>Mozilla, Apache, and Eclipse-style records with title, component, severity, status, and stack evidence.</p>
+          <p>Historical records with title, component, severity, status, resolution, and stack evidence.</p>
         </div>
       </section>
 
@@ -41,12 +41,12 @@
           <strong>ChromaDB with JSON fallback</strong>
         </div>
         <div>
-          <span>Search mode</span>
-          <strong>Semantic similarity</strong>
+          <span>Agents</span>
+          <strong>Triage, log, root cause, duplicate, remediation</strong>
         </div>
         <div>
           <span>Response</span>
-          <strong>Top-K related defects</strong>
+          <strong>Structured findings dashboard</strong>
         </div>
       </section>
 
@@ -87,106 +87,214 @@
               <button type="submit">Find Similar Bugs</button>
             </div>
           </form>
+
+          <section class="intake-support" aria-label="Analysis guidance">
+            <article class="support-panel full-width-panel">
+              <div>
+                <p class="eyebrow">Analysis Workflow</p>
+                <h3>Evidence-to-fix processing</h3>
+              </div>
+              <div class="agent-flow">
+                <span>Triage</span>
+                <span>Logs</span>
+                <span>Root Cause</span>
+                <span>Duplicates</span>
+                <span>Fix Plan</span>
+              </div>
+            </article>
+
+            <article class="support-panel">
+              <p class="eyebrow">Evidence Checklist</p>
+              <ul class="compact-list">
+                <li>Clear title and affected component</li>
+                <li>Steps to reproduce with actual result</li>
+                <li>Stack trace or error log excerpt</li>
+                <li>Environment, version, and browser details</li>
+              </ul>
+            </article>
+
+            <article class="support-panel">
+              <p class="eyebrow">Confidence Guide</p>
+              <div class="confidence-scale">
+                <div>
+                  <strong>80%+</strong>
+                  <span>Strong historical match</span>
+                </div>
+                <div>
+                  <strong>60-79%</strong>
+                  <span>Useful supporting signal</span>
+                </div>
+                <div>
+                  <strong>&lt;60%</strong>
+                  <span>Needs more evidence</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="support-panel full-width-panel">
+              <p class="eyebrow">Generated Findings</p>
+              <div class="finding-tags">
+                <span>Severity</span>
+                <span>Priority</span>
+                <span>Exception Type</span>
+                <span>Failure Point</span>
+                <span>Root Cause</span>
+                <span>Duplicate Issues</span>
+                <span>Recommended Fix</span>
+                <span>PDF Report</span>
+              </div>
+            </article>
+
+            <article class="support-panel full-width-panel">
+              <p class="eyebrow">Submission Package</p>
+              <div class="submission-grid">
+                <div>
+                  <strong>Inputs</strong>
+                  <span>Text, issue export, stack trace, logs</span>
+                </div>
+                <div>
+                  <strong>Knowledge Base</strong>
+                  <span>Historical defects and resolutions</span>
+                </div>
+                <div>
+                  <strong>Output</strong>
+                  <span>Dashboard findings and PDF report</span>
+                </div>
+              </div>
+            </article>
+          </section>
         </div>
 
         <aside class="results-pane">
+          <div class="results-header">
+            <div>
+              <p class="eyebrow">AI Analysis</p>
+              <h2>Structured Findings</h2>
+            </div>
+            <span id="status">Ready</span>
+            <button id="download-report" class="sample-button">Download Report</button>
+          </div>
 
-  <div class="results-header">
-    <div>
-        <p class="eyebrow">AI Analysis</p>
-        <h2>Bug Analysis</h2>
-    </div>
-    <span id="status">Ready</span>
-    <button id="download-report" class="sample-button">
-    📄 Download Report
-</button>
-</div>
+          <div id="summary-card" class="summary-card" style="display:none;">
+            <h3>Retrieval Summary</h3>
+            <p id="summary-text"></p>
+          </div>
 
-<!-- TRIAGE PANEL -->
-<div id="triage-card" class="triage-card" style="display:none;">
-    <h3>🧠 Triage Analysis</h3>
+          <div id="loader" class="loader" style="display:none;">
+            Searching historical bug database...
+          </div>
 
-    <div class="triage-grid">
-        <div>
-            <strong>Severity</strong>
-            <p id="severity"></p>
-        </div>
+          <div id="triage-card" class="triage-card" style="display:none;">
+            <h3>Triage Analysis</h3>
+            <div class="triage-grid">
+              <div>
+                <strong>Severity</strong>
+                <p id="severity"></p>
+              </div>
+              <div>
+                <strong>Priority</strong>
+                <p id="priority"></p>
+              </div>
+              <div>
+                <strong>Component</strong>
+                <p id="component"></p>
+              </div>
+              <div>
+                <strong>Confidence</strong>
+                <p id="confidence"></p>
+              </div>
+            </div>
+            <div class="reason-box">
+              <strong>Reasoning</strong>
+              <p id="reasoning"></p>
+            </div>
+          </div>
 
-        <div>
-            <strong>Priority</strong>
-            <p id="priority"></p>
-        </div>
+          <div id="log-card" class="triage-card" style="display:none;">
+            <h3>Log Analysis</h3>
+            <div class="triage-grid">
+              <div>
+                <strong>Exception Type</strong>
+                <p id="exception_type"></p>
+              </div>
+              <div>
+                <strong>Failure Point</strong>
+                <p id="failure_point"></p>
+              </div>
+              <div>
+                <strong>Affected Code Path</strong>
+                <p id="affected_code_path"></p>
+              </div>
+              <div>
+                <strong>Confidence</strong>
+                <p id="log_confidence"></p>
+              </div>
+            </div>
+            <div class="reason-box">
+              <strong>Reasoning</strong>
+              <p id="log_reasoning"></p>
+            </div>
+          </div>
 
-        <div>
-            <strong>Component</strong>
-            <p id="component"></p>
-        </div>
+          <div id="root-cause-card" class="triage-card" style="display:none;">
+            <h3>Root Cause Hypothesis</h3>
+            <div class="triage-grid">
+              <div>
+                <strong>Confidence</strong>
+                <p id="root_cause_confidence"></p>
+              </div>
+              <div>
+                <strong>Evidence Source</strong>
+                <p>Historical defect KB</p>
+              </div>
+            </div>
+            <div class="reason-box">
+              <strong>Hypothesis</strong>
+              <p id="root_cause_hypothesis"></p>
+            </div>
+            <div class="reason-box">
+              <strong>Reasoning</strong>
+              <p id="root_cause_reasoning"></p>
+            </div>
+            <div id="root_cause_evidence" class="evidence-list"></div>
+          </div>
 
-        <div>
-            <strong>Confidence</strong>
-            <p id="confidence"></p>
-        </div>
-    </div>
+          <div id="duplicate-card" class="triage-card" style="display:none;">
+            <h3>Duplicate Detection</h3>
+            <div id="duplicate_matches" class="duplicate-list"></div>
+          </div>
 
-    <div class="reason-box">
-        <strong>Reasoning</strong>
-        <p id="reasoning"></p>
-    </div>
-</div>
+          <div id="remediation-card" class="triage-card" style="display:none;">
+            <h3>Recommended Fix</h3>
+            <div class="triage-grid">
+              <div>
+                <strong>Confidence</strong>
+                <p id="remediation_confidence"></p>
+              </div>
+              <div>
+                <strong>Grounding</strong>
+                <p>Root cause, duplicates, historical resolutions</p>
+              </div>
+            </div>
+            <div class="reason-box">
+              <strong>Recommendation</strong>
+              <p id="remediation_recommendation"></p>
+            </div>
+            <div class="finding-columns">
+              <div>
+                <strong>Action Items</strong>
+                <ul id="remediation_actions"></ul>
+              </div>
+              <div>
+                <strong>Best Practices</strong>
+                <ul id="remediation_practices"></ul>
+              </div>
+            </div>
+          </div>
 
-<!-- LOG ANALYSIS -->
-<div id="log-card" class="triage-card" style="display:none; margin-top:20px;">
-
-    <h3>📄 Log Analysis</h3>
-
-    <div class="triage-grid">
-
-        <div>
-            <strong>Exception Type</strong>
-            <p id="exception_type"></p>
-        </div>
-
-        <div>
-            <strong>Failure Point</strong>
-            <p id="failure_point"></p>
-        </div>
-
-        <div>
-            <strong>Affected Code Path</strong>
-            <p id="affected_code_path"></p>
-        </div>
-
-        <div>
-            <strong>Confidence</strong>
-            <p id="log_confidence"></p>
-        </div>
-
-    </div>
-
-    <div class="reason-box">
-        <strong>Reasoning</strong>
-        <p id="log_reasoning"></p>
-    </div>
-
-</div>
-
-<h2 style="margin-top:25px;">Related Defects</h2>
-
-<!-- Retrieval Summary -->
-<div id="summary-card" class="summary-card" style="display:none;">
-    <h3>📊 Retrieval Summary</h3>
-    <p id="summary-text"></p>
-  </div>
-
-  <!-- Loading Indicator -->
-  <div id="loader" class="loader" style="display:none;">
-    🔄 Searching historical bug database...
-  </div>
-
-  <!-- Results -->
-  <div id="results" class="results"></div>
-
-</aside>
+          <h2 class="section-heading">Related Defects</h2>
+          <div id="results" class="results"></div>
+        </aside>
       </section>
     </main>
     <script src="/static/app.js"></script>
